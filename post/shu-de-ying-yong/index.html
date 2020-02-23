@@ -2,29 +2,29 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>蓝书图论刷题 | gzhffIThh</title>
+<title>树的应用 | gzhffIThh</title>
 <link rel="shortcut icon" href="https://gzhffIThh.github.io/favicon.ico?v=1582462769009">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://gzhffIThh.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="蓝书图论刷题 | gzhffIThh - Atom Feed" href="https://gzhffIThh.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="树的应用 | gzhffIThh - Atom Feed" href="https://gzhffIThh.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="PART 1.最短路
-P1948 [USACO08JAN]电话线Telephone Lines
-题目链接
-解析
+    <meta name="description" content="重心：
 
-分层最短路
-加一维最短路
+定义
 
-code
+在一棵树中，删去一个点后，树分成的子树中最大的子树最小的一个点
 
-分层最短路（Dijkstra）
+性质：
 
-#include &lt;bits/stdc++.h..." />
-    <meta name="keywords" content="算法,图论,oi,最短路" />
+
+无边权的树中，其他所有点到重心的距离和最小
+用一条边连接两棵树，新的重心在原来两个重心的路径上
+一棵树删一个点，重心最多只会移动一个位置
+一棵树..." />
+    <meta name="keywords" content="树,算法,oi" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -86,113 +86,65 @@ code
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              蓝书图论刷题
+              树的应用
             </h2>
             <div class="post-info">
               <span>
                 2020-02-23
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
+              
+                <a href="https://gzhffIThh.github.io/tag/shNiRSWr_/" class="post-tag">
+                  # 树
+                </a>
               
                 <a href="https://gzhffIThh.github.io/tag/-UvVWYqiO/" class="post-tag">
                   # 算法
-                </a>
-              
-                <a href="https://gzhffIThh.github.io/tag/wVQAv82zZY/" class="post-tag">
-                  # 图论
                 </a>
               
                 <a href="https://gzhffIThh.github.io/tag/60BZysYVW/" class="post-tag">
                   # oi
                 </a>
               
-                <a href="https://gzhffIThh.github.io/tag/-nSO8Dsd6o/" class="post-tag">
-                  # 最短路
-                </a>
-              
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h3 id="part-1最短路">PART 1.最短路</h3>
-<p>P1948 [USACO08JAN]电话线Telephone Lines</p>
-<p><a href="https://www.luogu.com.cn/problem/P1948">题目链接</a></p>
-<h4 id="解析">解析</h4>
+                <h3 id="重心">重心：</h3>
+<ul>
+<li>定义</li>
+</ul>
+<p>在一棵树中，删去一个点后，树分成的子树中最大的子树最小的一个点</p>
+<ul>
+<li>性质：</li>
+</ul>
 <ol>
-<li>分层最短路</li>
-<li>加一维最短路</li>
+<li>无边权的树中，其他所有点到重心的距离和最小</li>
+<li>用一条边连接两棵树，新的重心在原来两个重心的路径上</li>
+<li>一棵树删一个点，重心最多只会移动一个位置</li>
+<li>一棵树最多有两个重心且相邻</li>
 </ol>
-<h4 id="code">code</h4>
-<ol>
-<li>分层最短路（Dijkstra）</li>
-</ol>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-typedef pair&lt;int, int&gt; PII;
-const int MAXN = 1001 * 1001;
-const int MAXP = 10001 * 1001;
-int n, p, k;
-int head[MAXN], nxt[MAXP], v[MAXP], w[MAXP], cnt;
-int dis[MAXN], used[MAXN];
-void add(int x, int y, int z)
-{
-nxt[++cnt] = head[x];
-head[x] = cnt;
-v[cnt] = y;
-w[cnt] = z;
-}
-int Dijkstra()
-{
-memset(dis, 0x3f, sizeof dis);
-memset(used, 0, sizeof used);
-priority_queue&lt;PII, vector&lt;PII &gt;, greater&lt;PII &gt; &gt; heap;
-heap.push({0, 1});
-dis[1] = 0;
-while(!heap.empty())
-{
-    while(used[heap.top().second]) heap.pop();
-    int u = heap.top().second; heap.pop();
-    used[u] = 1;
-    for (int i = head[u]; i; i = nxt[i])
-    {
-        int z = max(w[i], dis[u]);
-        if(dis[v[i]] &gt; z)
-        {
-            dis[v[i]] = z;
-            heap.push({dis[v[i]], v[i]});
-        }
-    }
-    if(u == (k + 1) * n) return dis[u];
-}
-if(dis[(k + 1) * n] == 1061109567)
-    return -1;
-return dis[(k + 1) * n];
-}
-int main()
-{
-scanf(&quot;%d %d %d&quot;, &amp;n, &amp;p, &amp;k);
-for (int i = 1; i &lt;= p; i++)
-{
-    int x, y, z;
-    scanf(&quot;%d %d %d&quot;, &amp;x, &amp;y, &amp;z);
-    add(x, y, z);
-    add(y, x, z);
-    for (int j = 1; j &lt;= k; j++)//k+1层
-    {
-        add(n * (j - 1) + x, n * j + y, 0);
-        add(n * (j - 1) + y, n * j + x, 0);
-        add(n * j + x, n * j + y, z);
-        add(n * j + y, n * j + x, z);
-    }
-}
-for (int j = 1; j &lt;= k; j++)
-    add(n * j, n * (j + 1), 0);//防止有路径小于k条边
-printf(&quot;%d&quot;, Dijkstra());
-return 0;
-}
-</code></pre>
+<ul>
+<li>例题：</li>
+</ul>
+<p><a href="http://poj.org/problem?id=1655">POJ1655</a></p>
+<p><a href="http://poj.org/problem?id=3107">POJ3107</a></p>
+<h3 id="树的直径">树的直径：</h3>
+<ul>
+<li>定义</li>
+</ul>
+<p>一棵树中最长的一条链</p>
+<ul>
+<li>例题</li>
+</ul>
+<p><a href="https://www.luogu.com.cn/problem/SP1437">模板</a><br>
+<a href="https://gzhffithh.blog.luogu.org/shu-di-zhi-jing">code</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P4408">[NOI2003]逃学的小孩</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P3761">[TJOI2017]城市</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P3629">[APIO2010]巡逻</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P2491">[SDOI2011]消防</a></p>
 
               </div>
               <div class="toc-container">
@@ -201,12 +153,8 @@ return 0;
 <ul>
 <li>
 <ul>
-<li><a href="#part-1%E6%9C%80%E7%9F%AD%E8%B7%AF">PART 1.最短路</a>
-<ul>
-<li><a href="#%E8%A7%A3%E6%9E%90">解析</a></li>
-<li><a href="#code">code</a></li>
-</ul>
-</li>
+<li><a href="#%E9%87%8D%E5%BF%83">重心：</a></li>
+<li><a href="#%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84">树的直径：</a></li>
 </ul>
 </li>
 </ul>
@@ -218,6 +166,15 @@ return 0;
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://gzhffIThh.github.io/post/lan-shu-tu-lun-shua-ti/">
+              <h3 class="post-title">
+                蓝书图论刷题
+              </h3>
+            </a>
+          </div>
         
 
         
