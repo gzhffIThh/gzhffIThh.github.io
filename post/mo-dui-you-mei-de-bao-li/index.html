@@ -2,29 +2,34 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>树的应用 | gzhffIThh</title>
+<title>莫队（优美的暴力） | gzhffIThh</title>
 <link rel="shortcut icon" href="https://gzhffIThh.github.io/favicon.ico?v=1582464840549">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://gzhffIThh.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="树的应用 | gzhffIThh - Atom Feed" href="https://gzhffIThh.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="莫队（优美的暴力） | gzhffIThh - Atom Feed" href="https://gzhffIThh.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="重心：
+    <meta name="description" content="
 
-定义
-
-在一棵树中，删去一个点后，树分成的子树中最大的子树最小的一个点
-
-性质：
+解决区间统计问题 如这题
 
 
-无边权的树中，其他所有点到重心的距离和最小
-用一条边连接两棵树，新的重心在原来两个重心的路径上
-一棵树删一个点，重心最多只会移动一个位置
-一棵树..." />
-    <meta name="keywords" content="树,算法,oi" />
+分块 + 排序 + 统计
+
+
+复杂度： $ O(nm^2) $
+
+
+思想：通过分块和排序后，减少相邻区间的移动操作次数，并在区间移动过程中进行区间中统计
+
+
+例题 ：
+P3901
+SP3267
+[国家集训队..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -86,7 +91,7 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              树的应用
+              莫队（优美的暴力）
             </h2>
             <div class="post-info">
               <span>
@@ -96,67 +101,36 @@
                 1 min read
               </span>
               
-                <a href="https://gzhffIThh.github.io/tag/shNiRSWr_/" class="post-tag">
-                  # 树
-                </a>
-              
-                <a href="https://gzhffIThh.github.io/tag/-UvVWYqiO/" class="post-tag">
-                  # 算法
-                </a>
-              
-                <a href="https://gzhffIThh.github.io/tag/60BZysYVW/" class="post-tag">
-                  # oi
-                </a>
-              
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h3 id="重心">重心：</h3>
-<ul>
-<li>定义</li>
+                <ul>
+<li>
+<p>解决区间统计问题 如<a href="https://www.luogu.com.cn/problem/P3901">这题</a></p>
+</li>
+<li>
+<p>分块 + 排序 + 统计</p>
+</li>
+<li>
+<p>复杂度： $ O(nm^2) $</p>
+</li>
+<li>
+<p>思想：通过分块和排序后，减少相邻区间的移动操作次数，并在区间移动过程中进行区间中统计</p>
+</li>
 </ul>
-<p>在一棵树中，删去一个点后，树分成的子树中最大的子树最小的一个点</p>
-<ul>
-<li>性质：</li>
-</ul>
-<ol>
-<li>无边权的树中，其他所有点到重心的距离和最小</li>
-<li>用一条边连接两棵树，新的重心在原来两个重心的路径上</li>
-<li>一棵树删一个点，重心最多只会移动一个位置</li>
-<li>一棵树最多有两个重心且相邻</li>
-</ol>
-<ul>
-<li>例题：</li>
-</ul>
-<p><a href="http://poj.org/problem?id=1655">POJ1655</a></p>
-<p><a href="http://poj.org/problem?id=3107">POJ3107</a></p>
-<h3 id="树的直径">树的直径：</h3>
-<ul>
-<li>定义</li>
-</ul>
-<p>一棵树中最长的一条链</p>
-<ul>
-<li>例题</li>
-</ul>
-<p><a href="https://www.luogu.com.cn/problem/SP1437">模板</a><br>
-<a href="https://gzhffithh.blog.luogu.org/shu-di-zhi-jing">code</a></p>
-<p><a href="https://www.luogu.com.cn/problem/P4408">[NOI2003]逃学的小孩</a></p>
-<p><a href="https://www.luogu.com.cn/problem/P3761">[TJOI2017]城市</a></p>
-<p><a href="https://www.luogu.com.cn/problem/P3629">[APIO2010]巡逻</a></p>
-<p><a href="https://www.luogu.com.cn/problem/P2491">[SDOI2011]消防</a></p>
+<h2 id="例题">例题 ：</h2>
+<p><a href="https://www.luogu.com.cn/problem/P3901">P3901</a></p>
+<p><a href="https://www.luogu.com.cn/problem/SP3267">SP3267</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P1494">[国家集训队]小Z的袜子 /【模板】莫队</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P1903">[国家集训队]数颜色 / 维护队列 /【模板】带修莫队</a></p>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
 <li>
 <ul>
-<li>
-<ul>
-<li><a href="#%E9%87%8D%E5%BF%83">重心：</a></li>
-<li><a href="#%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84">树的直径：</a></li>
-</ul>
-</li>
+<li><a href="#%E4%BE%8B%E9%A2%98">例题 ：</a></li>
 </ul>
 </li>
 </ul>
@@ -169,9 +143,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://gzhffIThh.github.io/post/lan-shu-tu-lun-shua-ti/">
+            <a href="https://gzhffIThh.github.io/post/about-me/">
               <h3 class="post-title">
-                蓝书图论刷题
+                About me...
               </h3>
             </a>
           </div>

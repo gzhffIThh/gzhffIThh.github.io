@@ -1,0 +1,510 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>190809noip模拟赛 | gzhffIThh</title>
+<link rel="shortcut icon" href="https://gzhffIThh.github.io/favicon.ico?v=1582464840549">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://gzhffIThh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="190809noip模拟赛 | gzhffIThh - Atom Feed" href="https://gzhffIThh.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="很正常的一场模拟 score:300
+T1  素数
+【问题描述】
+给定一个正整数N，询问1到N中有多少个素数。
+####【输入格式】primenum.in
+一个正整数N。
+【输出格式】primenum.out
+一个数Ans，表示1到N中有多..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://gzhffIThh.github.io">
+  <img class="avatar" src="https://gzhffIThh.github.io/images/avatar.png?v=1582464840549" alt="">
+  </a>
+  <h1 class="site-title">
+    gzhffIThh
+  </h1>
+  <p class="site-description">
+    gzhffIThh's blog
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              190809noip模拟赛
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-02-23
+              </span>
+              <span>
+                14 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h2 id="很正常的一场模拟-score300">很正常的一场模拟 score:300</h2>
+<h2 id="t1-素数">T1  素数</h2>
+<h4 id="问题描述">【问题描述】</h4>
+<p>给定一个正整数N，询问1到N中有多少个素数。<br>
+####【输入格式】primenum.in<br>
+一个正整数N。</p>
+<h4 id="输出格式primenumout">【输出格式】primenum.out</h4>
+<p>一个数Ans，表示1到N中有多少个素数。</p>
+<h4 id="输入样例">【输入样例】</h4>
+<p>10</p>
+<h4 id="输出样例">【输出样例】</h4>
+<p>4</p>
+<h3 id="数据规模">【数据规模】</h3>
+<p>30%   N&lt;=100<br>
+70%   N&lt;=5000<br>
+100%  N&lt;=10000000</p>
+<p>签到题？<br>
+用欧拉筛O(n)搞定</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+inline int read()
+{
+    int f = 1, a = 0;char c = getchar();
+    while(c &gt; '9' || c &lt; '0'){ if(c == '-') f = -f; c = getchar(); }
+    while(c &lt;= '9' &amp;&amp; c &gt;= '0'){ a = a * 10 + c - '0'; c = getchar(); }
+    return a * f; 
+}
+int n, len = 0;
+const int maxn = 1e8 + 5;
+int p[maxn];
+bool used[maxn];
+int main()
+{
+//	freopen(&quot;primenum.in&quot;, &quot;r&quot;, stdin);
+//	freopen(&quot;primenum.out&quot;, &quot;w&quot;, stdout);
+	n = read();
+	for (int i = 2; i &lt;= n; i++)
+	{
+		if(!used[i]) p[++len] = i;
+		for (int j = 1; j &lt;= len &amp;&amp; i * p[j] &lt;= n; j++)
+		{
+			used[i * p[j]] = 1;
+			if(i % p[j] == 0) break;
+		}
+	}
+	printf(&quot;%d&quot;, len);
+	return 0;
+}
+</code></pre>
+<hr>
+<h2 id="t2-传玫瑰">T2 传玫瑰</h2>
+<h4 id="题目描述">【题目描述】</h4>
+<p>情人节到了，情侣们也活跃起来了。这不，GoldenSun和Yoyo_Yao分到了同一个班上（真有缘）。这天，GoldenSun专门跑到了花店，为Yoyo_Yao选了999支玫瑰花（-_-|||），可当GoldenSun说了一大堆肉麻的话，正准备把花送给Yoyo_Yao时，班主任DuBowen进来了，无奈的GoldenSun只得从自己的位子上把花传给Yoyo_Yao。如果一整束传，不但比较抢眼，说不定还会被中途的一些八卦的人抢走，所以GoldenSun只能一支一支的传。<br>
+已知GoldenSun他们班的座位是一个矩形，GoldenSun的位子在(x,m)，Yoyo_Yao的位子在(y,n)，传玫瑰时，只能纵横传而不能斜传（更不能扔）。又知GoldenSun班上的同学很八卦，每经过一个同学传时，玫瑰花就会扣去一定的成长值（玫瑰先开始有个成长值），即那个同学的八卦度，当玫瑰的成长值不大于0时，玫瑰就会凋零。GoldenSun希望自己的心血不要白费，即所有的玫瑰花都能传到Yoyo_Yao手中，所以如果有这种情况，GoldenSun就会自己冒着风险送这朵玫瑰。<br>
+请你帮GoldenSun找到一条令玫瑰成长值为最高的路线，让GoldenSun能向Yoyo_Yao在情人节之际表达自己的爱意。</p>
+<h4 id="输入格式">【输入格式】</h4>
+<p>输入第一行有2个用空格隔开的整数a和b，表示班里有a行b列（1&lt;=a,b&lt;=90）。<br>
+第二行有四个用空格隔开的整数x,m,y,n，(x,m)为GoldenSun的座位，(y,n)为Yoyo_Yao的座位。（1&lt;=x,y&lt;=a;1&lt;=m,n&lt;=b）<br>
+第三行有一个整数love为单支玫瑰的最初成长值。(0&lt;love&lt;=maxlongint)<br>
+来的a行是一个a*b的矩阵，矩阵中第i行j列的正整数表示坐在第i行j列的学生的八卦程度，每行的b个整数之间用空格隔开。（当然他们两个人的八卦程度为0）<br>
+八卦程度(0&lt;=bg&lt;=love)</p>
+<h4 id="输出格式">【输出格式】</h4>
+<p>输出共一行，包含一个整数，表示单支玫瑰最后成长值的最大值。<br>
+如果是GoldenSun自己送，则输出love，即单支玫瑰的最初成长值。</p>
+<h4 id="输入样例-2">【输入样例】</h4>
+<p>2 2<br>
+1 1 2 2<br>
+3<br>
+0 1<br>
+1 0</p>
+<h4 id="输出样例-2">【输出样例】</h4>
+<p>2</p>
+<p>看起来像传纸条<br>
+然而正解是最短路？？？</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+#define ll long long
+inline ll read()
+{
+    int f = 1, a = 0;char c = getchar();
+    while(c &gt; '9' || c &lt; '0'){ if(c == '-') f = -f; c = getchar(); }
+    while(c &lt;= '9' &amp;&amp; c &gt;= '0'){ a = a * 10 + c - '0'; c = getchar(); }
+    return a * f; 
+}
+ll n, m;
+ll sx, sy, tx, ty, lo;
+ll g[105][105];
+ll dis[105][105], f = 1, e = 0;
+bool inq[105][105];
+struct point
+{
+	int x, y;
+} q[400005];
+ll det[4][2] = { {0, 1}, {1, 0}, {-1, 0}, {0, -1} };
+int main()
+{
+	//freopen(&quot;sendrose.in&quot;, &quot;r&quot;, stdin);
+	//freopen(&quot;sendrose.out&quot;, &quot;w&quot;, stdout);
+	n = read();m = read();
+	sx = read();sy = read();tx = read();ty = read();lo = read();
+	for (int i = 1; i &lt;= n; i++)
+		for (int j = 1; j &lt;= m; j++)
+			g[i][j] = read();
+	memset(dis, 20, sizeof(dis));
+	dis[sx][sy] = 0, inq[sx][sy] = 1, q[++e].x = sx, q[e].y = sy;
+	while(f &lt;= e)
+	{
+		point u = q[f++];
+		for (int i = 0; i &lt; 4; i++)
+		{
+			point v = u;
+			v.x += det[i][0];
+			v.y += det[i][1];
+			if(v.x &lt; 1 || v.x &gt; n || v.y &lt; 1 || v.y &gt; m) continue;
+			if(dis[v.x][v.y] &gt; dis[u.x][u.y] + g[v.x][v.y])
+			{
+				dis[v.x][v.y] = dis[u.x][u.y] + g[v.x][v.y];
+				if(inq[v.x][v.y] == 0)
+				{
+					inq[v.x][v.y] = 1;
+					q[++e].x = v.x;
+					q[e].y = v.y;
+				}
+			}
+		}
+		inq[u.x][u.y] = 0;
+	}
+	printf(&quot;%lld&quot;, lo - dis[tx][ty] &lt; 0 ? lo : lo - dis[tx][ty]);
+	return 0;
+}
+</code></pre>
+<hr>
+<h2 id="t3-一起去打cs">T3 一起去打cs</h2>
+<h4 id="问题描述-2">【问题描述】</h4>
+<p>早就和lyk约好了去打cs，一直没找着时间，终于今天我家没人，他家也没人，总算可以出去了。但是偏偏天公不作美，某某人非要留那么多题要做。没办法只能尽快做完然后抓紧时间吧……</p>
+<h5 id="为了尽量节省时间我俩决定分开做所有题吧嘿嘿稍微耍一下滑~~-但是有的题我比较擅长而有的题lyk要比我做的快-所以为了尽快做完所有的题我们要好好的分配一下-现在给出你要做题-的数目和我俩分别做每个题所需要的时间-希望你帮忙计算一下我们最少需要多长时间才能做完所有的题去打cs啊">为了尽量节省时间，我俩决定分开做所有题吧（嘿嘿，稍微耍一下滑~~）。但是有的题我比较擅长，而有的题lyk要比我做的快。所以为了尽快做完所有的题，我们要好好的分配一下。现在给出你要做题 的数目和我俩分别做每个题所需要的时间。希望你帮忙计算一下，我们最少需要多长时间才能做完所有的题去打cs啊！！！</h5>
+<h4 id="输入格式csin">【输入格式】cs.in</h4>
+<p>第一行一个正整数n，表示有n个题要做。<br>
+接下来有n行，每行两个正整数ai，bi。 分别表示我和lyk做每个题所用的时间。</p>
+<h4 id="输出格式csout">【输出格式】cs.out</h4>
+<p>一个数，最少需要多长时间才能去打CS。</p>
+<h4 id="输入样例-3">【输入样例】</h4>
+<p>3<br>
+5 10<br>
+6 11<br>
+7 12</p>
+<h4 id="输出样例-3">【输出样例】</h4>
+<p>12</p>
+<h4 id="输入输出样例解释">【输入输出样例解释】</h4>
+<p>我完成题目1和题目2，时间为11。lyk完成题目3，时间为12。<br>
+或者 我完成题目1和题目3，时间为12。lyk完成题目2，时间为11。</p>
+<h4 id="数据规模-2">【数据规模】</h4>
+<p>30%的数据满足：1 &lt;= n &lt;= 20<br>
+100%的数据满足：1 &lt;= n &lt;= 200 , 1 &lt;= ai,bi &lt;=200</p>
+<p>非常简单的动态规划。<br>
+题目类型：独立任务最优调度问题<br>
+状态设计：f[i,j]表示前i个任务，第一个人用了j时间，第二个人所用最小时间<br>
+转移方程：f[i,j]=min{f[i-1,j-a[i]],f[i-1,j]+b[i]}</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int n, a[201], b[201];
+int f[201][40001];
+int ans = 10000000;
+int sum = 0;
+int main()
+{
+//	freopen(&quot;cs.in&quot;, &quot;r&quot;, stdin);
+//	freopen(&quot;cs.out&quot;, &quot;w&quot;, stdout);
+	scanf(&quot;%d&quot;, &amp;n);
+	for (int i = 1; i &lt;= n; i++) 
+		scanf(&quot;%d%d&quot;, &amp;a[i], &amp;b[i]), sum += a[i];
+	memset(f, 11, sizeof(f));
+	memset(f[0], 0, sizeof(f[0]));
+	for (int i = 0; i &lt; n; i++)
+		for (int j = sum - a[i + 1]; j &gt;= 0; j--)
+		{
+			f[i + 1][j + a[i + 1]] = min(f[i + 1][j + a[i + 1]], f[i][j]);
+			f[i + 1][j] = min(f[i + 1][j], f[i][j] + b[i + 1]);				
+		}
+	for (int j = 0; j &lt;= sum; j++)
+		ans = min(max(f[n][j], j), ans);
+	printf(&quot;%d&quot;, ans);
+	return 0;
+}
+</code></pre>
+<hr>
+<h2 id="t4-战争">T4  战争</h2>
+<p>####【问题描述】<br>
+在2240年，一场巨大的战争在地球联合力量（EAF）与火星联盟(MF)之间展开。至今，双方势均力敌。因最近的一次经济危机，资源紧缺，EAF将被MF勒要更多领土。为此，EAF决定采取战争以来最重要的行动：发动对分散在MF上各处的基地进行同时攻击。EAF的力量大都是mechs——大型两足跛行车，有飞行功能。<br>
+典型的MF基地概况如下：构成基地的房屋地跨一到两块领土。每块领土被保护塔产生的穿不透的能量层所笼罩，以免于外来袭击。这些保护塔围绕在领土周围起保护作用。<br>
+每座保护塔通过建造在地面上的水道与至少一座塔相联系。当那些相联系的塔围成一圈，它们产生能量层。否则能量层消失。<br>
+MF知道如果能量层消失，基地将很容易被EAF的力量侵占，因此，被水道相连的两座塔保护水道免受军事袭击。每座塔有防御功能，能拆卸指定数量的mechs，每个水道在坍塌之前能解决特定数量敌方mechs的袭击。这个数量由水道连接的两塔能拆卸的总数量决定。两座塔不能被一个以上的水道相连。<br>
+<img src="http://www.h2zbmh.com:8080/html/JudgeOnline/upload/image/20190815/20190815114140_93581.png" alt="" loading="lazy"><br>
+但是，袭击塔一边的水道不减少塔在另一边能拆卸的mechs的数量。因为这次行动是突袭，所有的对水道的袭击都必须同时，所有水道同时坍塌瓦解。</p>
+<p>所有能量层必须废除才算毁灭了一个MF基地。破坏所有水道能达此目的，但也将需要很多mechs 牺牲。EAF只有很少的力量花费了，必须最有效率地部署mechs。<br>
+你被赋予这任务，写程序：使EAF胜利。给定一幅保护塔的曲线图，决定哪些水道要被破坏，来使所有能量层消失，要求战斗中牺牲最少的mechs。</p>
+<h4 id="输入格式-2">【输入格式】</h4>
+<p>第一行为一个整数m，2 &lt; m &lt;= 100，代表塔的数量。<br>
+以下2m行，对于每个塔都有两行输入：<br>
+◎一行包含三个正整数i(0 &lt;= i &lt;= m-1)，ui(1 &lt;= ui &lt;= 50)，ci(1 &lt;= ci &lt;= m-1)：每个塔的身份标识、可以摧毁的mechs的数量和与它相连的河道的数量。两个整数间用一个空格隔开。<br>
+◎一行包含ci个不同的正整数，代表和塔i连接的塔。一个塔不能连接到它自己，两个整数间用一个空格隔开。<br>
+该防御体系至少能够生成一个能量层。 不一定所有的塔连通。</p>
+<h4 id="输出格式-2">【输出格式】</h4>
+<p>一行一个整数，代表EAF摧毁所有能量层所需要消耗的最少数量的mechs。</p>
+<h4 id="输入样例-4">【输入样例】</h4>
+<p>3<br>
+0 1 2<br>
+1 2<br>
+1 2 2<br>
+0 2<br>
+2 3 2<br>
+0 1</p>
+<h4 id="输出样例-4">【输出样例】</h4>
+<p>3</p>
+<p>总结题意，就是花最少的费用把一个有环的图拆成一个无环的图，无环的图<br>
+是什么，很显然是树，要花最少的费用把图拆成树即保留权值最大的树，推<br>
+到这里我想大家应该知道这题的算法了，就是最大生成树<br>
+这里用的是prim</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+inline int read()
+{
+    int f = 1, a = 0;char c = getchar();
+    while(c &gt; '9' || c &lt; '0'){ if(c == '-') f = -f; c = getchar(); }
+    while(c &lt;= '9' &amp;&amp; c &gt;= '0'){ a = a * 10 + c - '0'; c = getchar(); }
+    return a * f; 
+}
+int n, a[105], to[105][105];
+struct edge
+{
+	int u, v, w;
+} e[20005];
+int tmp[105];
+int cnt = 0;
+bool used[105][105];
+bool cmp(edge a, edge b)
+{
+	return a.w &gt; b.w;
+}
+int fa[105];
+int find(int x) 
+{
+	if(fa[x] != x) fa[x] = find(fa[x]);
+	return fa[x];
+}
+int ans, sum;
+int x;
+int main()
+{
+//	freopen(&quot;warfare.in&quot;, &quot;r&quot;, stdin);
+//	freopen(&quot;warfare.out&quot;, &quot;w&quot;, stdout);
+	n = read();	
+	for (int i = 1; i &lt;= n; i++)
+	{
+		x = read();
+		a[x] = read();
+		tmp[x] = read();
+		for (int j = 1; j &lt;= tmp[x]; j++)
+			to[x][j] = read();
+	}
+	for (int i = 0; i &lt; n; i++)
+		for (int j = 1; j &lt;= tmp[i]; j++)
+			if(used[i][to[i][j]] == 0)
+			{
+				e[++cnt].u = i;
+				e[cnt].v = to[i][j];
+				e[cnt].w = a[i] + a[to[i][j]];
+				sum += e[cnt].w;
+				used[i][to[i][j]] = 1;
+				used[to[i][j]][i] = 1;
+			}
+	sort(e + 1, e + cnt + 1, cmp);
+	for (int i = 1; i &lt;= n; i++) fa[i] = i;
+	for (int i = 1; i &lt;= cnt; i++)
+	{
+		if(find(e[i].u) == find(e[i].v)) continue;
+		else
+		{
+			int uu = find(e[i].u);int vv = find(e[i].v);
+			ans += e[i].w;
+			fa[uu] = vv;
+		}
+	}
+	printf(&quot;%d&quot;, sum - ans);
+	return 0;
+}
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%BE%88%E6%AD%A3%E5%B8%B8%E7%9A%84%E4%B8%80%E5%9C%BA%E6%A8%A1%E6%8B%9F-score300">很正常的一场模拟 score:300</a></li>
+<li><a href="#t1-%E7%B4%A0%E6%95%B0">T1  素数</a><br>
+*
+<ul>
+<li><a href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0">【问题描述】</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8Fprimenumout">【输出格式】primenum.out</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B">【输入样例】</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B">【输出样例】</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1">【数据规模】</a></li>
+</ul>
+</li>
+<li><a href="#t2-%E4%BC%A0%E7%8E%AB%E7%91%B0">T2 传玫瑰</a><br>
+*
+<ul>
+<li><a href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0">【题目描述】</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F">【输入格式】</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F">【输出格式】</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B-2">【输入样例】</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-2">【输出样例】</a></li>
+</ul>
+</li>
+<li><a href="#t3-%E4%B8%80%E8%B5%B7%E5%8E%BB%E6%89%93cs">T3 一起去打cs</a><br>
+*
+<ul>
+<li><a href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0-2">【问题描述】</a>
+<ul>
+<li><a href="#%E4%B8%BA%E4%BA%86%E5%B0%BD%E9%87%8F%E8%8A%82%E7%9C%81%E6%97%B6%E9%97%B4%E6%88%91%E4%BF%A9%E5%86%B3%E5%AE%9A%E5%88%86%E5%BC%80%E5%81%9A%E6%89%80%E6%9C%89%E9%A2%98%E5%90%A7%E5%98%BF%E5%98%BF%E7%A8%8D%E5%BE%AE%E8%80%8D%E4%B8%80%E4%B8%8B%E6%BB%91~~-%E4%BD%86%E6%98%AF%E6%9C%89%E7%9A%84%E9%A2%98%E6%88%91%E6%AF%94%E8%BE%83%E6%93%85%E9%95%BF%E8%80%8C%E6%9C%89%E7%9A%84%E9%A2%98lyk%E8%A6%81%E6%AF%94%E6%88%91%E5%81%9A%E7%9A%84%E5%BF%AB-%E6%89%80%E4%BB%A5%E4%B8%BA%E4%BA%86%E5%B0%BD%E5%BF%AB%E5%81%9A%E5%AE%8C%E6%89%80%E6%9C%89%E7%9A%84%E9%A2%98%E6%88%91%E4%BB%AC%E8%A6%81%E5%A5%BD%E5%A5%BD%E7%9A%84%E5%88%86%E9%85%8D%E4%B8%80%E4%B8%8B-%E7%8E%B0%E5%9C%A8%E7%BB%99%E5%87%BA%E4%BD%A0%E8%A6%81%E5%81%9A%E9%A2%98-%E7%9A%84%E6%95%B0%E7%9B%AE%E5%92%8C%E6%88%91%E4%BF%A9%E5%88%86%E5%88%AB%E5%81%9A%E6%AF%8F%E4%B8%AA%E9%A2%98%E6%89%80%E9%9C%80%E8%A6%81%E7%9A%84%E6%97%B6%E9%97%B4-%E5%B8%8C%E6%9C%9B%E4%BD%A0%E5%B8%AE%E5%BF%99%E8%AE%A1%E7%AE%97%E4%B8%80%E4%B8%8B%E6%88%91%E4%BB%AC%E6%9C%80%E5%B0%91%E9%9C%80%E8%A6%81%E5%A4%9A%E9%95%BF%E6%97%B6%E9%97%B4%E6%89%8D%E8%83%BD%E5%81%9A%E5%AE%8C%E6%89%80%E6%9C%89%E7%9A%84%E9%A2%98%E5%8E%BB%E6%89%93cs%E5%95%8A">为了尽量节省时间，我俩决定分开做所有题吧（嘿嘿，稍微耍一下滑~~）。但是有的题我比较擅长，而有的题lyk要比我做的快。所以为了尽快做完所有的题，我们要好好的分配一下。现在给出你要做题 的数目和我俩分别做每个题所需要的时间。希望你帮忙计算一下，我们最少需要多长时间才能做完所有的题去打cs啊！！！</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8Fcsin">【输入格式】cs.in</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8Fcsout">【输出格式】cs.out</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B-3">【输入样例】</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-3">【输出样例】</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B%E8%A7%A3%E9%87%8A">【输入输出样例解释】</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1-2">【数据规模】</a></li>
+</ul>
+</li>
+<li><a href="#t4-%E6%88%98%E4%BA%89">T4  战争</a><br>
+*
+<ul>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-2">【输入格式】</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-2">【输出格式】</a></li>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B-4">【输入样例】</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B-4">【输出样例】</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://gzhffIThh.github.io/post/li-nian-noip-pu-ji-zu-kao-dian-fen-xi/">
+              <h3 class="post-title">
+                历年noip普及组考点分析
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://gzhffIThh.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
