@@ -1,0 +1,722 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>190806 noip模拟赛 | gzhffIThh</title>
+<link rel="shortcut icon" href="https://gzhffIThh.github.io/favicon.ico?v=1582464880765">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://gzhffIThh.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="190806 noip模拟赛 | gzhffIThh - Atom Feed" href="https://gzhffIThh.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="这次模拟赛T1当时未想到。。。T3难一点
+score：213
+
+T1 数字游戏
+【问题描述】
+大家列队后，都觉得累了，于是一起坐到院子中的草地上休息。这时Anna突然想跟她的最大竞争对手Cici玩一个数字游戏，她要你编写程序帮助她取得胜利。..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://gzhffIThh.github.io">
+  <img class="avatar" src="https://gzhffIThh.github.io/images/avatar.png?v=1582464880765" alt="">
+  </a>
+  <h1 class="site-title">
+    gzhffIThh
+  </h1>
+  <p class="site-description">
+    gzhffIThh's blog
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              190806 noip模拟赛
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-02-23
+              </span>
+              <span>
+                12 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h6 id="这次模拟赛t1当时未想到-t3难一点">这次模拟赛T1当时未想到。。。T3难一点</h6>
+<h6 id="score213">score：213</h6>
+<hr>
+<h2 id="t1-数字游戏">T1 数字游戏</h2>
+<h3 id="问题描述">【问题描述】</h3>
+<h5 id="大家列队后都觉得累了于是一起坐到院子中的草地上休息-这时anna突然想跟她的最大竞争对手cici玩一个数字游戏她要你编写程序帮助她取得胜利">大家列队后，都觉得累了，于是一起坐到院子中的草地上休息。这时Anna突然想跟她的最大竞争对手Cici玩一个数字游戏，她要你编写程序帮助她取得胜利。</h5>
+<h5 id="第i次游戏初始时有一个整数n_i1-n_i-1000000游戏以anna先开始然后是cici这样两人轮流进行-在每一轮中一个游戏者可以把当前整数中减去原整数中最大的数字或最小的非零数字形成一个新的整数-例如从3014开始我们可以减去1或4分别形成整数3013或-3010-直到这个整数变为0时游戏结束-游戏结束时最后轮到那人就是胜利者">第i次游戏初始时有一个整数N_i(1 &lt;= N_i &lt;= 1,000,000)，，游戏以Anna先开始,然后是Cici，这样两人轮流进行。在每一轮中，一个游戏者可以把当前整数中减去原整数中最大的数字或最小的非零数字，形成一个新的整数。例如从3014开始，我们可以减去1或4，分别形成整数3013或 3010. 直到这个整数变为0时游戏结束。游戏结束时最后轮到那人就是胜利者。</h5>
+<h5 id="anna和cici总共进行g1-g-100次游戏-请你帮助确定每次游戏到底是anna还是cici获得胜利-anna和cici两人都是足够聪明的如果轮到某人时对方留给她的数是必胜的她将毫不犹豫按最优策略取得胜利">Anna和Cici总共进行G(1 &lt;= G &lt;= 100)次游戏。请你帮助确定每次游戏到底是Anna还是Cici获得胜利。Anna和Cici两人都是足够聪明的，如果轮到某人时，对方留给她的数是必胜的，她将毫不犹豫按最优策略取得胜利。</h5>
+<h5 id="假如某次游戏n_i13-anna先走并从中减去3剩下10然后cici只能减去1剩下9anna减去9剩下0游戏结束anna取得这次游戏的胜利">假如某次游戏N_i=13。Anna先走并从中减去3，剩下10，然后Cici只能减去1，剩下9，Anna减去9，剩下0游戏结束，Anna取得这次游戏的胜利。</h5>
+<h3 id="输入格式">【输入格式】</h3>
+<h5 id="第1行一个整数g">* 第1行：一个整数G</h5>
+<h5 id="第2g1行-第i1行包含一个整数-n_i">* 第2..G+1行: 第i+1行包含一个整数: N_i</h5>
+<h3 id="输出格式">【输出格式】</h3>
+<h5 id="第1g行-第i行包含yes-表示anna取得第i次游戏的胜利否则为no">* 第1..G行: 第i行包含&quot;YES&quot; ，表示Anna取得第i次游戏的胜利，否则为&quot;NO&quot;。</h5>
+<h3 id="输入样例cdgamein">【输入样例】cdgame.in</h3>
+<h5 id="2">2</h5>
+<h5 id="9">9</h5>
+<h5 id="10">10</h5>
+<h3 id="输出样例cdgameout">【输出样例】cdgame.out</h3>
+<h5 id="yes">YES</h5>
+<h5 id="no">NO</h5>
+<hr>
+<h6 id="第一题是简单的博弈论对于一个数若它的后继状态均先手必胜则当前必败反之必胜">第一题是简单的博弈论，对于一个数，若它的后继状态均先手必胜，则当前必败；反之，必胜。</h6>
+<h6 id="用fi表示i这个数字先手情况-1表示必胜0表示必败">用f[i]表示i这个数字先手情况 1表示必胜，0表示必败</h6>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+inline int read()
+{
+    int f = 1, a = 0;
+    char c = getchar();
+    while(c &gt; '9' || c &lt; '0'){if(c == '-') f = -f;c = getchar();}
+    while(c &lt;= '9' &amp;&amp; c &gt;= '0'){a = a * 10 + c - '0';c = getchar();}
+    return a * f; 
+}
+int t;
+int n;
+int f[1000005];
+int minx(int x)
+{
+	int d = x, m = 9;
+	while(d &gt; 0)
+	{
+		if(d % 10 != 0) m = min(m, d % 10);
+		d /= 10;
+	}
+	return x - m;
+}
+int maxx(int x)
+{
+	int d = x, m = 0;
+	while(d &gt; 0)
+	{
+		m = max(m, d % 10);
+		d /= 10;
+	}
+	return x - m;
+}
+int main()
+{
+	t = read();
+	f[0] = 0;
+	for (int i = 1; i &lt;= 1000000; i++)
+	{
+		if(f[minx(i)] == 1 &amp;&amp; f[maxx(i)] == 1) f[i] = 0;
+		else f[i] = 1;
+	}
+	while(t--)
+	{
+		n = read();
+		if(f[n] == 1) cout &lt;&lt; &quot;YES\n&quot;;
+		else cout &lt;&lt; &quot;NO\n&quot;;
+	}
+	return 0;
+}
+</code></pre>
+<hr>
+<h2 id="t2-电话时间">T2 电话时间</h2>
+<h3 id="问题描述-2">【问题描述】</h3>
+<h5 id="某人总是花很多时间给父母打电话-有一次他记录了打电话的开始时间和结束时刻t1和t2请你帮他算算此次通话一共用了多少秒-又有一次他记录了打电话的开始时刻t1和通话的时间长度len请你帮他计算他在什么时刻结束通话">某人总是花很多时间给父母打电话。有一次他记录了打电话的开始时间和结束时刻t1和t2，请你帮他算算此次通话一共用了多少秒。又有一次，他记录了打电话的开始时刻t1和通话的时间长度len，请你帮他计算他在什么时刻结束通话。</h5>
+<h5 id="已知每次通话时间小于24个小时">已知每次通话时间小于24个小时。</h5>
+<h3 id="输入文件">【输入文件】</h3>
+<h5 id="输入文件phonein的第一行为一个正整数t表示了数据组数">输入文件phone.in的第一行为一个正整数T，表示了数据组数。</h5>
+<h5 id="接下来t行每行第一个数为k">接下来T行，每行第一个数为k：</h5>
+<h5 id="如果k-0接下来包含两个时间t1和t2表示了打电话的开始时间和结束时刻用一个空格隔开时间格式为hhmmss其中0hh230mmss59-hh-mm和ss都是两位数字因此012是不合法的时间应写作000102-你应该对这个询问输出通话时间长度答案一定为区间086400之内的非负整数">如果k = 0，接下来包含两个时间t1和t2，表示了打电话的开始时间和结束时刻，用一个空格隔开，时间格式为HH:MM:SS，其中0≤HH≤23,0≤MM,SS≤59。HH、MM和SS都是两位数字，因此0:1:2是不合法的时间（应写作00:01:02）。你应该对这个询问输出通话时间长度，答案一定为区间[0,86400)之内的非负整数。</h5>
+<h5 id="如果k-1接下来包含一个时间t1和一个非负整数len表示了打电话的开始时刻与通话时间长度用一个空格隔开时间格式同为hhmmss同样时间小于24个小时即len86400-你应该对这个询问输出结束通话的时刻同为hhmmss格式">如果k = 1，接下来包含一个时间t1和一个非负整数len，表示了打电话的开始时刻与通话时间长度，用一个空格隔开，时间格式同为HH:MM:SS，同样时间小于24个小时，即len&lt;86400。你应该对这个询问输出结束通话的时刻，同为HH:MM:SS格式。</h5>
+<h3 id="输出文件">【输出文件】</h3>
+<h5 id="输出文件phoneout包含t个整数或者时间对于每个询问输出对应的答案">输出文件phone.out包含T个整数或者时间，对于每个询问输出对应的答案。</h5>
+<h3 id="样例输入">【样例输入】</h3>
+<h5 id="4">4</h5>
+<h5 id="0-010203-040506">0 01:02:03 04:05:06</h5>
+<h5 id="0-235959-000000">0 23:59:59 00:00:00</h5>
+<h5 id="1-000003-3">1 00:00:03 3</h5>
+<h5 id="1-235958-4">1 23:59:58 4</h5>
+<h3 id="样例输出">【样例输出】</h3>
+<h5 id="10983">10983</h5>
+<h5 id="1">1</h5>
+<h5 id="000006">00:00:06</h5>
+<h5 id="000002">00:00:02</h5>
+<h3 id="数据规模与约定">【数据规模与约定】</h3>
+<h5 id="对于20的数据t-10">对于20%的数据，T ≤ 10；</h5>
+<h5 id="对于40的数据t-100">对于40%的数据，T ≤ 100；</h5>
+<h5 id="对于100的数据t-100">对于100%的数据，T ≤ 100</h5>
+<hr>
+<h6 id="简单的模拟">简单的模拟</h6>
+<h6 id="注意过夜的情况">注意过夜的情况</h6>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+#define ll long long
+inline ll read()
+{
+    int f = 1, a = 0; char c = getchar();
+    while(c &gt; '9' || c &lt; '0'){if(c == '-') f = -f;c = getchar();}
+    while(c &lt;= '9' &amp;&amp; c &gt;= '0'){a = a * 10 + c - '0';c = getchar();}
+    return a * f; 
+}
+ll T, s1, s2, s3, t1, t2, t3, tmps, tmpt, len, k;
+int main()
+{
+///	freopen(&quot;phone.in&quot;, &quot;r&quot;, stdin);
+//	freopen(&quot;phone.out&quot;, &quot;w&quot;, stdout);
+	T = read();
+	while(T--)
+	{
+		k = read();
+		if(k == 0)
+		{
+			s1 = read(), s2 = read(), s3 = read();
+			t1 = read(), t2 = read(), t3 = read();
+			tmps = s1 * 60 * 60 + s2 * 60 + s3;
+			tmpt = t1 * 60 * 60 + t2 * 60 + t3;
+			if(tmpt &lt; tmps) tmpt += 86400;
+			printf(&quot;%lld\n&quot;, tmpt - tmps);
+		}
+		if(k == 1)
+		{
+			s1 = read(), s2 = read(), s3 = read();len = read(); 
+			tmps = (s1 * 60 * 60 + s2 * 60 + s3 + len) % 86400;
+			t1 = tmps / 3600, t2 = (tmps % 3600) / 60, t3 = tmps % 60;
+			if(t1 &lt; 10) printf(&quot;0%lld:&quot;, t1);
+			else printf(&quot;%lld:&quot;, t1);
+			if(t2 &lt; 10) printf(&quot;0%lld:&quot;, t2);
+			else printf(&quot;%lld:&quot;, t2);
+			if(t3 &lt; 10) printf(&quot;0%lld\n&quot;, t3);
+			else printf(&quot;%lld\n&quot;, t3);
+		}
+	}	
+	return 0;
+}
+</code></pre>
+<hr>
+<h2 id="t3-min">T3  min</h2>
+<h3 id="题目描述">【题目描述】</h3>
+<h5 id="给定n个数请你选出两段连续的数满足每段的长度都不超过l两段之间">给定N个数，请你选出两段连续的数，满足每段的长度都不超过L，两段之间</h5>
+<h5 id="不相交且选出的数和最大">不相交，且选出的数和最大。</h5>
+<h3 id="输入文件-2">【输入文件】</h3>
+<h5 id="第一行-n-l">第一行 N L</h5>
+<h5 id="输出文件-2">输出文件</h5>
+<h5 id="最大的和">最大的和</h5>
+<h3 id="样例输入-2">【样例输入】</h3>
+<h5 id="9-3">9 3</h5>
+<h5 id="1-3-1-3-3-3-1-3-1">1 3 -1 3 -3 3 -1 3 1</h5>
+<h3 id="样例输出-2">【样例输出】</h3>
+<h5 id="10-2">10</h5>
+<h3 id="数据约定">【数据约定】</h3>
+<h5 id="33nl1000">33%：N,L&lt;=1000</h5>
+<h5 id="66nl100000">66%：N,L&lt;=100000</h5>
+<h5 id="100nl1000000">100%：N,L&lt;=1000000</h5>
+<hr>
+<h6 id="想法一on4-暴力枚举-tle">想法一：O(n^4) 暴力枚举    -&gt;    TLE</h6>
+<h6 id="想法二两遍从左到右的单调队列找最值-不一定正确可能一开始的最大区间分开成两边的两个区间更优">想法二：两遍从左到右的单调队列找最值 -&gt;不一定正确（可能一开始的最大区间分开成两边的两个区间更优）</h6>
+<h6 id="正解-fi-表示-从前到i为止的最大连续区间-gi表示-从后到i为止的最大连续区间">正解: f[i] 表示 从前到i为止的最大连续区间 ， g[i]表示 从后到i为止的最大连续区间</h6>
+<h6 id="再on枚举-fi-gi-1-的max">再O(n)枚举 F[i] + G[i + 1] 的max</h6>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+#define fu(i, l, r) for(int i = l; i &lt;= r; i++)
+#define fd(i, l, r) for(int i = l; i &gt;= r; i--)
+#define ll long long
+#define N 2000005
+#define M 1000005
+inline int read()
+{
+    int f = 1, a = 0;
+    char c = getchar();
+    while(c &gt; '9' || c &lt; '0'){ if(c == '-')f = -f; c = getchar(); }
+    while(c &lt;= '9' &amp;&amp; c &gt;= '0'){ a = a * 10 + c - '0'; c = getchar(); }
+    return a * f;
+}
+int n, l;
+int a[N];
+int sum[N], h[N], h2[N], f[N], d[N];
+int q[N], b = 1, r = 0;
+int ans = -314324124;
+int main()
+{
+    n = read(); l = read();
+    fu(i, 1, n) a[i] = read();
+    fu(i, 1, n) sum[i] = sum[i - 1] + a[i];
+    fu(i, 1, n) 
+    {
+        while(b &lt;= r &amp;&amp; i - q[b] &gt; l) b++; 
+        while(b &lt;= r &amp;&amp; sum[i - 1] &lt;= sum[q[r]]) r--;
+        q[++r] = i - 1;
+        h[i] = sum[i] - sum[q[b]];
+        f[i] = max(f[i - 1], h[i]);
+    }
+    b = 1, r = 0;
+    fd(i, n, 1)
+    {
+        while(b &lt;= r &amp;&amp; q[b] - i + 1 &gt; l) b++;
+        while(b &lt;= r &amp;&amp; sum[i] &gt;= sum[q[r]]) r--;
+        q[++r] = i;
+        h2[i] = sum[q[b]] - sum[i - 1];
+        d[i] = max(d[i + 1], h2[i]);
+    }
+    fu(i, 1, n - 1) ans = max(ans, f[i] + d[i + 1]);
+    printf(&quot;%d&quot;, ans);
+    return 0;
+}
+</code></pre>
+<hr>
+<h2 id="t4-圣诞岛的旅行">T4 圣诞岛的旅行</h2>
+<h6 id="时间限制-1s">时间限制   1s</h6>
+<h3 id="问题背景">【问题背景】</h3>
+<h5 id="angel喜欢无目的的乱逛当然他不会轻易地回头-angel想去广场那么他什么时候才能到呢">Angel喜欢无目的的乱逛，当然，他不会轻易地回头。Angel想去广场，那么，他什么时候才能到呢？</h5>
+<h3 id="问题描述-3">【问题描述】</h3>
+<h5 id="angel已经买了一份圣诞岛的地图地图上有nn-100个交叉路口交叉路口之间有马路相连接不超过1000条马路">Angel已经买了一份圣诞岛的地图，地图上有N(N &lt;= 100)个交叉路口，交叉路口之间有马路相连接(不超过1000条马路)。</h5>
+<h5 id="因为圣诞岛的人遵循奇怪的规则道路都是单向的不同的道路之间有一定的距离我们假设angel所在的地点为点1广场所在点为n">因为圣诞岛的人遵循奇怪的规则，道路都是单向的，不同的道路之间有一定的距离，我们假设Angel所在的地点为点1，广场所在点为N。</h5>
+<h5 id="假设angel走一单位距离需要一单位时间">假设Angel走一单位距离需要一单位时间。</h5>
+<h5 id="问angel最早和最迟什么时候到达广场">问Angel最早和最迟什么时候到达广场？</h5>
+<h3 id="输入格式-2">【输入格式】</h3>
+<h5 id="第一行为n-mn是路口的数量m是马路的数量">第一行为N, M，N是路口的数量，M是马路的数量。</h5>
+<h5 id="后m行每行3个整数x-y-weight代表一条从x路口到y路口长度为weight的马路">后M行，每行3个整数X, Y, Weight，代表一条从X路口到Y路口，长度为Weight的马路。</h5>
+<h3 id="输出格式-2">【输出格式】</h3>
+<h5 id="对于每组数据第一行请输出最少时间第二行请输出最迟时间要是可怜的angel永远到不了广场那就只要输出never">对于每组数据，第一行请输出最少时间，第二行请输出最迟时间，要是可怜的Angel永远到不了广场，那就只要输出“Never”。</h5>
+<h3 id="样例数据">【样例数据】</h3>
+<h5 id="input">Input</h5>
+<h5 id="5-5">5 5</h5>
+<h5 id="1-2-1">1 2 1</h5>
+<h5 id="1-4-10">1 4 10</h5>
+<h5 id="2-3-1">2 3 1</h5>
+<h5 id="3-4-1">3 4 1</h5>
+<h5 id="4-5-1">4 5 1</h5>
+<h5 id="output">Output</h5>
+<h5 id="4-2">4</h5>
+<h5 id="11">11</h5>
+<hr>
+<h6 id="简单的图论最长路-最短路">简单的图论（最长路 + 最短路）</h6>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+inline int read()
+{
+    int f = 1, a = 0;
+    char c = getchar();
+    while(c &gt; '9' || c &lt; '0'){if(c == '-') f = -f;c = getchar();}
+    while(c &lt;= '9' &amp;&amp; c &gt;= '0'){a = a * 10 + c - '0';c = getchar();}
+    return a * f; 
+}
+int n, m;
+int head[105], nxt[1005], v[1005], w[1005], cnt;
+void add(int x, int y, int z)
+{
+    nxt[++cnt] = head[x];
+    head[x] = cnt;
+    v[cnt] = y;
+    w[cnt] = z;
+}
+int q[1000005], inq[105], f = 1, e = 0, dis[1005];
+int main()
+{
+//  freopen(&quot;travel.in&quot;, &quot;r&quot;, stdin);
+//  freopen(&quot;travel.out&quot;, &quot;w&quot;, stdout);
+    n = read();m = read();
+    for (int i = 1; i &lt;= m; i++) { int x = read(), y = read(), z = read(); add(x, y, z);}
+    memset(dis, 20, sizeof(dis));
+    dis[1] = 0, inq[1] = 1, q[++e] = 1;
+    while(f &lt;= e)
+    {
+        int _u = q[f++];
+        for (int i = head[_u]; i != 0; i = nxt[i])
+        {
+            int _v = v[i];
+            if(dis[_v] &gt; dis[_u] + w[i])
+            {
+                dis[_v] = dis[_u] + w[i];
+                if(inq[_v] == 0)
+                {
+                    inq[_v] = 1;
+                    q[++e] = _v;
+                }
+            }
+        }
+        inq[_u] = 0;
+    }
+    if(dis[n] == 336860180)
+    {
+        cout &lt;&lt; &quot;Never&quot;;
+        return 0;
+    }
+    cout &lt;&lt; dis[n] &lt;&lt; endl;
+    memset(dis, 20, sizeof(dis));
+    dis[1] = 0, inq[1] = 1, e = 0, f = 1, q[++e] = 1;
+    while(f &lt;= e)
+    {
+        int _u = q[f++];
+        for (int i = head[_u]; i != 0; i = nxt[i])
+        {
+            int _v = v[i];
+            if(dis[_v] &gt; dis[_u] - w[i])
+            {
+                dis[_v] = dis[_u] - w[i];
+                if(inq[_v] == 0)
+                {
+                    inq[_v] = 1;
+                    q[++e] = _v;
+                }
+            }
+        }
+        inq[_u] = 0;
+    }
+    cout &lt;&lt; -dis[n];
+    return 0;
+}
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E8%BF%99%E6%AC%A1%E6%A8%A1%E6%8B%9F%E8%B5%9Bt1%E5%BD%93%E6%97%B6%E6%9C%AA%E6%83%B3%E5%88%B0-t3%E9%9A%BE%E4%B8%80%E7%82%B9">这次模拟赛T1当时未想到。。。T3难一点</a></li>
+<li><a href="#score213">score：213</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#t1-%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F">T1 数字游戏</a>
+<ul>
+<li><a href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0">【问题描述】</a><br>
+*
+<ul>
+<li><a href="#%E5%A4%A7%E5%AE%B6%E5%88%97%E9%98%9F%E5%90%8E%E9%83%BD%E8%A7%89%E5%BE%97%E7%B4%AF%E4%BA%86%E4%BA%8E%E6%98%AF%E4%B8%80%E8%B5%B7%E5%9D%90%E5%88%B0%E9%99%A2%E5%AD%90%E4%B8%AD%E7%9A%84%E8%8D%89%E5%9C%B0%E4%B8%8A%E4%BC%91%E6%81%AF-%E8%BF%99%E6%97%B6anna%E7%AA%81%E7%84%B6%E6%83%B3%E8%B7%9F%E5%A5%B9%E7%9A%84%E6%9C%80%E5%A4%A7%E7%AB%9E%E4%BA%89%E5%AF%B9%E6%89%8Bcici%E7%8E%A9%E4%B8%80%E4%B8%AA%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F%E5%A5%B9%E8%A6%81%E4%BD%A0%E7%BC%96%E5%86%99%E7%A8%8B%E5%BA%8F%E5%B8%AE%E5%8A%A9%E5%A5%B9%E5%8F%96%E5%BE%97%E8%83%9C%E5%88%A9">大家列队后，都觉得累了，于是一起坐到院子中的草地上休息。这时Anna突然想跟她的最大竞争对手Cici玩一个数字游戏，她要你编写程序帮助她取得胜利。</a></li>
+<li><a href="#%E7%AC%ACi%E6%AC%A1%E6%B8%B8%E6%88%8F%E5%88%9D%E5%A7%8B%E6%97%B6%E6%9C%89%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0n_i1-n_i-1000000%E6%B8%B8%E6%88%8F%E4%BB%A5anna%E5%85%88%E5%BC%80%E5%A7%8B%E7%84%B6%E5%90%8E%E6%98%AFcici%E8%BF%99%E6%A0%B7%E4%B8%A4%E4%BA%BA%E8%BD%AE%E6%B5%81%E8%BF%9B%E8%A1%8C-%E5%9C%A8%E6%AF%8F%E4%B8%80%E8%BD%AE%E4%B8%AD%E4%B8%80%E4%B8%AA%E6%B8%B8%E6%88%8F%E8%80%85%E5%8F%AF%E4%BB%A5%E6%8A%8A%E5%BD%93%E5%89%8D%E6%95%B4%E6%95%B0%E4%B8%AD%E5%87%8F%E5%8E%BB%E5%8E%9F%E6%95%B4%E6%95%B0%E4%B8%AD%E6%9C%80%E5%A4%A7%E7%9A%84%E6%95%B0%E5%AD%97%E6%88%96%E6%9C%80%E5%B0%8F%E7%9A%84%E9%9D%9E%E9%9B%B6%E6%95%B0%E5%AD%97%E5%BD%A2%E6%88%90%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E6%95%B4%E6%95%B0-%E4%BE%8B%E5%A6%82%E4%BB%8E3014%E5%BC%80%E5%A7%8B%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E5%87%8F%E5%8E%BB1%E6%88%964%E5%88%86%E5%88%AB%E5%BD%A2%E6%88%90%E6%95%B4%E6%95%B03013%E6%88%96-3010-%E7%9B%B4%E5%88%B0%E8%BF%99%E4%B8%AA%E6%95%B4%E6%95%B0%E5%8F%98%E4%B8%BA0%E6%97%B6%E6%B8%B8%E6%88%8F%E7%BB%93%E6%9D%9F-%E6%B8%B8%E6%88%8F%E7%BB%93%E6%9D%9F%E6%97%B6%E6%9C%80%E5%90%8E%E8%BD%AE%E5%88%B0%E9%82%A3%E4%BA%BA%E5%B0%B1%E6%98%AF%E8%83%9C%E5%88%A9%E8%80%85">第i次游戏初始时有一个整数N_i(1 &lt;= N_i &lt;= 1,000,000)，，游戏以Anna先开始,然后是Cici，这样两人轮流进行。在每一轮中，一个游戏者可以把当前整数中减去原整数中最大的数字或最小的非零数字，形成一个新的整数。例如从3014开始，我们可以减去1或4，分别形成整数3013或 3010. 直到这个整数变为0时游戏结束。游戏结束时最后轮到那人就是胜利者。</a></li>
+<li><a href="#anna%E5%92%8Ccici%E6%80%BB%E5%85%B1%E8%BF%9B%E8%A1%8Cg1-g-100%E6%AC%A1%E6%B8%B8%E6%88%8F-%E8%AF%B7%E4%BD%A0%E5%B8%AE%E5%8A%A9%E7%A1%AE%E5%AE%9A%E6%AF%8F%E6%AC%A1%E6%B8%B8%E6%88%8F%E5%88%B0%E5%BA%95%E6%98%AFanna%E8%BF%98%E6%98%AFcici%E8%8E%B7%E5%BE%97%E8%83%9C%E5%88%A9-anna%E5%92%8Ccici%E4%B8%A4%E4%BA%BA%E9%83%BD%E6%98%AF%E8%B6%B3%E5%A4%9F%E8%81%AA%E6%98%8E%E7%9A%84%E5%A6%82%E6%9E%9C%E8%BD%AE%E5%88%B0%E6%9F%90%E4%BA%BA%E6%97%B6%E5%AF%B9%E6%96%B9%E7%95%99%E7%BB%99%E5%A5%B9%E7%9A%84%E6%95%B0%E6%98%AF%E5%BF%85%E8%83%9C%E7%9A%84%E5%A5%B9%E5%B0%86%E6%AF%AB%E4%B8%8D%E7%8A%B9%E8%B1%AB%E6%8C%89%E6%9C%80%E4%BC%98%E7%AD%96%E7%95%A5%E5%8F%96%E5%BE%97%E8%83%9C%E5%88%A9">Anna和Cici总共进行G(1 &lt;= G &lt;= 100)次游戏。请你帮助确定每次游戏到底是Anna还是Cici获得胜利。Anna和Cici两人都是足够聪明的，如果轮到某人时，对方留给她的数是必胜的，她将毫不犹豫按最优策略取得胜利。</a></li>
+<li><a href="#%E5%81%87%E5%A6%82%E6%9F%90%E6%AC%A1%E6%B8%B8%E6%88%8Fn_i13-anna%E5%85%88%E8%B5%B0%E5%B9%B6%E4%BB%8E%E4%B8%AD%E5%87%8F%E5%8E%BB3%E5%89%A9%E4%B8%8B10%E7%84%B6%E5%90%8Ecici%E5%8F%AA%E8%83%BD%E5%87%8F%E5%8E%BB1%E5%89%A9%E4%B8%8B9anna%E5%87%8F%E5%8E%BB9%E5%89%A9%E4%B8%8B0%E6%B8%B8%E6%88%8F%E7%BB%93%E6%9D%9Fanna%E5%8F%96%E5%BE%97%E8%BF%99%E6%AC%A1%E6%B8%B8%E6%88%8F%E7%9A%84%E8%83%9C%E5%88%A9">假如某次游戏N_i=13。Anna先走并从中减去3，剩下10，然后Cici只能减去1，剩下9，Anna减去9，剩下0游戏结束，Anna取得这次游戏的胜利。</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F">【输入格式】</a><br>
+*
+<ul>
+<li><a href="#%E7%AC%AC1%E8%A1%8C%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0g">* 第1行：一个整数G</a></li>
+<li><a href="#%E7%AC%AC2g1%E8%A1%8C-%E7%AC%ACi1%E8%A1%8C%E5%8C%85%E5%90%AB%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0-n_i">* 第2..G+1行: 第i+1行包含一个整数: N_i</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F">【输出格式】</a><br>
+*
+<ul>
+<li><a href="#%E7%AC%AC1g%E8%A1%8C-%E7%AC%ACi%E8%A1%8C%E5%8C%85%E5%90%AByes-%E8%A1%A8%E7%A4%BAanna%E5%8F%96%E5%BE%97%E7%AC%ACi%E6%AC%A1%E6%B8%B8%E6%88%8F%E7%9A%84%E8%83%9C%E5%88%A9%E5%90%A6%E5%88%99%E4%B8%BAno">* 第1..G行: 第i行包含&quot;YES&quot; ，表示Anna取得第i次游戏的胜利，否则为&quot;NO&quot;。</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8Bcdgamein">【输入样例】cdgame.in</a><br>
+*
+<ul>
+<li><a href="#2">2</a></li>
+<li><a href="#9">9</a></li>
+<li><a href="#10">10</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8Bcdgameout">【输出样例】cdgame.out</a><br>
+*
+<ul>
+<li><a href="#yes">YES</a></li>
+<li><a href="#no">NO</a>
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E9%A2%98%E6%98%AF%E7%AE%80%E5%8D%95%E7%9A%84%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%AF%B9%E4%BA%8E%E4%B8%80%E4%B8%AA%E6%95%B0%E8%8B%A5%E5%AE%83%E7%9A%84%E5%90%8E%E7%BB%A7%E7%8A%B6%E6%80%81%E5%9D%87%E5%85%88%E6%89%8B%E5%BF%85%E8%83%9C%E5%88%99%E5%BD%93%E5%89%8D%E5%BF%85%E8%B4%A5%E5%8F%8D%E4%B9%8B%E5%BF%85%E8%83%9C">第一题是简单的博弈论，对于一个数，若它的后继状态均先手必胜，则当前必败；反之，必胜。</a></li>
+<li><a href="#%E7%94%A8fi%E8%A1%A8%E7%A4%BAi%E8%BF%99%E4%B8%AA%E6%95%B0%E5%AD%97%E5%85%88%E6%89%8B%E6%83%85%E5%86%B5-1%E8%A1%A8%E7%A4%BA%E5%BF%85%E8%83%9C0%E8%A1%A8%E7%A4%BA%E5%BF%85%E8%B4%A5">用f[i]表示i这个数字先手情况 1表示必胜，0表示必败</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#t2-%E7%94%B5%E8%AF%9D%E6%97%B6%E9%97%B4">T2 电话时间</a>
+<ul>
+<li><a href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0-2">【问题描述】</a><br>
+*
+<ul>
+<li><a href="#%E6%9F%90%E4%BA%BA%E6%80%BB%E6%98%AF%E8%8A%B1%E5%BE%88%E5%A4%9A%E6%97%B6%E9%97%B4%E7%BB%99%E7%88%B6%E6%AF%8D%E6%89%93%E7%94%B5%E8%AF%9D-%E6%9C%89%E4%B8%80%E6%AC%A1%E4%BB%96%E8%AE%B0%E5%BD%95%E4%BA%86%E6%89%93%E7%94%B5%E8%AF%9D%E7%9A%84%E5%BC%80%E5%A7%8B%E6%97%B6%E9%97%B4%E5%92%8C%E7%BB%93%E6%9D%9F%E6%97%B6%E5%88%BBt1%E5%92%8Ct2%E8%AF%B7%E4%BD%A0%E5%B8%AE%E4%BB%96%E7%AE%97%E7%AE%97%E6%AD%A4%E6%AC%A1%E9%80%9A%E8%AF%9D%E4%B8%80%E5%85%B1%E7%94%A8%E4%BA%86%E5%A4%9A%E5%B0%91%E7%A7%92-%E5%8F%88%E6%9C%89%E4%B8%80%E6%AC%A1%E4%BB%96%E8%AE%B0%E5%BD%95%E4%BA%86%E6%89%93%E7%94%B5%E8%AF%9D%E7%9A%84%E5%BC%80%E5%A7%8B%E6%97%B6%E5%88%BBt1%E5%92%8C%E9%80%9A%E8%AF%9D%E7%9A%84%E6%97%B6%E9%97%B4%E9%95%BF%E5%BA%A6len%E8%AF%B7%E4%BD%A0%E5%B8%AE%E4%BB%96%E8%AE%A1%E7%AE%97%E4%BB%96%E5%9C%A8%E4%BB%80%E4%B9%88%E6%97%B6%E5%88%BB%E7%BB%93%E6%9D%9F%E9%80%9A%E8%AF%9D">某人总是花很多时间给父母打电话。有一次他记录了打电话的开始时间和结束时刻t1和t2，请你帮他算算此次通话一共用了多少秒。又有一次，他记录了打电话的开始时刻t1和通话的时间长度len，请你帮他计算他在什么时刻结束通话。</a></li>
+<li><a href="#%E5%B7%B2%E7%9F%A5%E6%AF%8F%E6%AC%A1%E9%80%9A%E8%AF%9D%E6%97%B6%E9%97%B4%E5%B0%8F%E4%BA%8E24%E4%B8%AA%E5%B0%8F%E6%97%B6">已知每次通话时间小于24个小时。</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%96%87%E4%BB%B6">【输入文件】</a><br>
+*
+<ul>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%96%87%E4%BB%B6phonein%E7%9A%84%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%B8%BA%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B4%E6%95%B0t%E8%A1%A8%E7%A4%BA%E4%BA%86%E6%95%B0%E6%8D%AE%E7%BB%84%E6%95%B0">输入文件phone.in的第一行为一个正整数T，表示了数据组数。</a></li>
+<li><a href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5t%E8%A1%8C%E6%AF%8F%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%95%B0%E4%B8%BAk">接下来T行，每行第一个数为k：</a></li>
+<li>[如果k = 0，接下来包含两个时间t1和t2，表示了打电话的开始时间和结束时刻，用一个空格隔开，时间格式为HH:MM:SS，其中0≤HH≤23,0≤MM,SS≤59。HH、MM和SS都是两位数字，因此0:1:2是不合法的时间（应写作00:01:02）。你应该对这个询问输出通话时间长度，答案一定为区间<a href="#%E5%A6%82%E6%9E%9Ck-0%E6%8E%A5%E4%B8%8B%E6%9D%A5%E5%8C%85%E5%90%AB%E4%B8%A4%E4%B8%AA%E6%97%B6%E9%97%B4t1%E5%92%8Ct2%E8%A1%A8%E7%A4%BA%E4%BA%86%E6%89%93%E7%94%B5%E8%AF%9D%E7%9A%84%E5%BC%80%E5%A7%8B%E6%97%B6%E9%97%B4%E5%92%8C%E7%BB%93%E6%9D%9F%E6%97%B6%E5%88%BB%E7%94%A8%E4%B8%80%E4%B8%AA%E7%A9%BA%E6%A0%BC%E9%9A%94%E5%BC%80%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E4%B8%BAhhmmss%E5%85%B6%E4%B8%AD0hh230mmss59-hh-mm%E5%92%8Css%E9%83%BD%E6%98%AF%E4%B8%A4%E4%BD%8D%E6%95%B0%E5%AD%97%E5%9B%A0%E6%AD%A4012%E6%98%AF%E4%B8%8D%E5%90%88%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%BA%94%E5%86%99%E4%BD%9C000102-%E4%BD%A0%E5%BA%94%E8%AF%A5%E5%AF%B9%E8%BF%99%E4%B8%AA%E8%AF%A2%E9%97%AE%E8%BE%93%E5%87%BA%E9%80%9A%E8%AF%9D%E6%97%B6%E9%97%B4%E9%95%BF%E5%BA%A6%E7%AD%94%E6%A1%88%E4%B8%80%E5%AE%9A%E4%B8%BA%E5%8C%BA%E9%97%B4086400%E4%B9%8B%E5%86%85%E7%9A%84%E9%9D%9E%E8%B4%9F%E6%95%B4%E6%95%B0">0,86400)之内的非负整数。</a></li>
+<li><a href="#%E5%A6%82%E6%9E%9Ck-1%E6%8E%A5%E4%B8%8B%E6%9D%A5%E5%8C%85%E5%90%AB%E4%B8%80%E4%B8%AA%E6%97%B6%E9%97%B4t1%E5%92%8C%E4%B8%80%E4%B8%AA%E9%9D%9E%E8%B4%9F%E6%95%B4%E6%95%B0len%E8%A1%A8%E7%A4%BA%E4%BA%86%E6%89%93%E7%94%B5%E8%AF%9D%E7%9A%84%E5%BC%80%E5%A7%8B%E6%97%B6%E5%88%BB%E4%B8%8E%E9%80%9A%E8%AF%9D%E6%97%B6%E9%97%B4%E9%95%BF%E5%BA%A6%E7%94%A8%E4%B8%80%E4%B8%AA%E7%A9%BA%E6%A0%BC%E9%9A%94%E5%BC%80%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F%E5%90%8C%E4%B8%BAhhmmss%E5%90%8C%E6%A0%B7%E6%97%B6%E9%97%B4%E5%B0%8F%E4%BA%8E24%E4%B8%AA%E5%B0%8F%E6%97%B6%E5%8D%B3len86400-%E4%BD%A0%E5%BA%94%E8%AF%A5%E5%AF%B9%E8%BF%99%E4%B8%AA%E8%AF%A2%E9%97%AE%E8%BE%93%E5%87%BA%E7%BB%93%E6%9D%9F%E9%80%9A%E8%AF%9D%E7%9A%84%E6%97%B6%E5%88%BB%E5%90%8C%E4%B8%BAhhmmss%E6%A0%BC%E5%BC%8F">如果k = 1，接下来包含一个时间t1和一个非负整数len，表示了打电话的开始时刻与通话时间长度，用一个空格隔开，时间格式同为HH:MM:SS，同样时间小于24个小时，即len&lt;86400。你应该对这个询问输出结束通话的时刻，同为HH:MM:SS格式。</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%96%87%E4%BB%B6">【输出文件】</a><br>
+*
+<ul>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%96%87%E4%BB%B6phoneout%E5%8C%85%E5%90%ABt%E4%B8%AA%E6%95%B4%E6%95%B0%E6%88%96%E8%80%85%E6%97%B6%E9%97%B4%E5%AF%B9%E4%BA%8E%E6%AF%8F%E4%B8%AA%E8%AF%A2%E9%97%AE%E8%BE%93%E5%87%BA%E5%AF%B9%E5%BA%94%E7%9A%84%E7%AD%94%E6%A1%88">输出文件phone.out包含T个整数或者时间，对于每个询问输出对应的答案。</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5">【样例输入】</a><br>
+*
+<ul>
+<li><a href="#4">4</a></li>
+<li><a href="#0-010203-040506">0 01:02:03 04:05:06</a></li>
+<li><a href="#0-235959-000000">0 23:59:59 00:00:00</a></li>
+<li><a href="#1-000003-3">1 00:00:03 3</a></li>
+<li><a href="#1-235958-4">1 23:59:58 4</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA">【样例输出】</a><br>
+*
+<ul>
+<li><a href="#10983">10983</a></li>
+<li><a href="#1">1</a></li>
+<li><a href="#000006">00:00:06</a></li>
+<li><a href="#000002">00:00:02</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E8%A7%84%E6%A8%A1%E4%B8%8E%E7%BA%A6%E5%AE%9A">【数据规模与约定】</a><br>
+*
+<ul>
+<li><a href="#%E5%AF%B9%E4%BA%8E20%E7%9A%84%E6%95%B0%E6%8D%AEt-10">对于20%的数据，T ≤ 10；</a></li>
+<li><a href="#%E5%AF%B9%E4%BA%8E40%E7%9A%84%E6%95%B0%E6%8D%AEt-100">对于40%的数据，T ≤ 100；</a></li>
+<li><a href="#%E5%AF%B9%E4%BA%8E100%E7%9A%84%E6%95%B0%E6%8D%AEt-100">对于100%的数据，T ≤ 100</a>
+<ul>
+<li><a href="#%E7%AE%80%E5%8D%95%E7%9A%84%E6%A8%A1%E6%8B%9F">简单的模拟</a></li>
+<li><a href="#%E6%B3%A8%E6%84%8F%E8%BF%87%E5%A4%9C%E7%9A%84%E6%83%85%E5%86%B5">注意过夜的情况</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#t3-min">T3  min</a>
+<ul>
+<li><a href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0">【题目描述】</a><br>
+*
+<ul>
+<li><a href="#%E7%BB%99%E5%AE%9An%E4%B8%AA%E6%95%B0%E8%AF%B7%E4%BD%A0%E9%80%89%E5%87%BA%E4%B8%A4%E6%AE%B5%E8%BF%9E%E7%BB%AD%E7%9A%84%E6%95%B0%E6%BB%A1%E8%B6%B3%E6%AF%8F%E6%AE%B5%E7%9A%84%E9%95%BF%E5%BA%A6%E9%83%BD%E4%B8%8D%E8%B6%85%E8%BF%87l%E4%B8%A4%E6%AE%B5%E4%B9%8B%E9%97%B4">给定N个数，请你选出两段连续的数，满足每段的长度都不超过L，两段之间</a></li>
+<li><a href="#%E4%B8%8D%E7%9B%B8%E4%BA%A4%E4%B8%94%E9%80%89%E5%87%BA%E7%9A%84%E6%95%B0%E5%92%8C%E6%9C%80%E5%A4%A7">不相交，且选出的数和最大。</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%96%87%E4%BB%B6-2">【输入文件】</a><br>
+*
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%A1%8C-n-l">第一行 N L</a></li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%96%87%E4%BB%B6-2">输出文件</a></li>
+<li><a href="#%E6%9C%80%E5%A4%A7%E7%9A%84%E5%92%8C">最大的和</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%85%A5-2">【样例输入】</a><br>
+*
+<ul>
+<li><a href="#9-3">9 3</a></li>
+<li><a href="#1-3-1-3-3-3-1-3-1">1 3 -1 3 -3 3 -1 3 1</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A0%B7%E4%BE%8B%E8%BE%93%E5%87%BA-2">【样例输出】</a><br>
+*
+<ul>
+<li><a href="#10-2">10</a></li>
+</ul>
+</li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%BA%A6%E5%AE%9A">【数据约定】</a><br>
+*
+<ul>
+<li><a href="#33nl1000">33%：N,L&lt;=1000</a></li>
+<li><a href="#66nl100000">66%：N,L&lt;=100000</a></li>
+<li><a href="#100nl1000000">100%：N,L&lt;=1000000</a>
+<ul>
+<li><a href="#%E6%83%B3%E6%B3%95%E4%B8%80on4-%E6%9A%B4%E5%8A%9B%E6%9E%9A%E4%B8%BE-tle">想法一：O(n^4) 暴力枚举    -&gt;    TLE</a></li>
+<li><a href="#%E6%83%B3%E6%B3%95%E4%BA%8C%E4%B8%A4%E9%81%8D%E4%BB%8E%E5%B7%A6%E5%88%B0%E5%8F%B3%E7%9A%84%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97%E6%89%BE%E6%9C%80%E5%80%BC-%E4%B8%8D%E4%B8%80%E5%AE%9A%E6%AD%A3%E7%A1%AE%E5%8F%AF%E8%83%BD%E4%B8%80%E5%BC%80%E5%A7%8B%E7%9A%84%E6%9C%80%E5%A4%A7%E5%8C%BA%E9%97%B4%E5%88%86%E5%BC%80%E6%88%90%E4%B8%A4%E8%BE%B9%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%8C%BA%E9%97%B4%E6%9B%B4%E4%BC%98">想法二：两遍从左到右的单调队列找最值 -&gt;不一定正确（可能一开始的最大区间分开成两边的两个区间更优）</a></li>
+<li><a href="#%E6%AD%A3%E8%A7%A3-fi-%E8%A1%A8%E7%A4%BA-%E4%BB%8E%E5%89%8D%E5%88%B0i%E4%B8%BA%E6%AD%A2%E7%9A%84%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%8C%BA%E9%97%B4-gi%E8%A1%A8%E7%A4%BA-%E4%BB%8E%E5%90%8E%E5%88%B0i%E4%B8%BA%E6%AD%A2%E7%9A%84%E6%9C%80%E5%A4%A7%E8%BF%9E%E7%BB%AD%E5%8C%BA%E9%97%B4">正解: f[i] 表示 从前到i为止的最大连续区间 ， g[i]表示 从后到i为止的最大连续区间</a></li>
+<li><a href="#%E5%86%8Don%E6%9E%9A%E4%B8%BE-fi-gi-1-%E7%9A%84max">再O(n)枚举 F[i] + G[i + 1] 的max</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#t4-%E5%9C%A3%E8%AF%9E%E5%B2%9B%E7%9A%84%E6%97%85%E8%A1%8C">T4 圣诞岛的旅行</a><br>
+*<br>
+*<br>
+*<br>
+* <a href="#%E6%97%B6%E9%97%B4%E9%99%90%E5%88%B6-1s">时间限制   1s</a>
+<ul>
+<li><a href="#%E9%97%AE%E9%A2%98%E8%83%8C%E6%99%AF">【问题背景】</a><br>
+*
+<ul>
+<li><a href="#angel%E5%96%9C%E6%AC%A2%E6%97%A0%E7%9B%AE%E7%9A%84%E7%9A%84%E4%B9%B1%E9%80%9B%E5%BD%93%E7%84%B6%E4%BB%96%E4%B8%8D%E4%BC%9A%E8%BD%BB%E6%98%93%E5%9C%B0%E5%9B%9E%E5%A4%B4-angel%E6%83%B3%E5%8E%BB%E5%B9%BF%E5%9C%BA%E9%82%A3%E4%B9%88%E4%BB%96%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E6%89%8D%E8%83%BD%E5%88%B0%E5%91%A2">Angel喜欢无目的的乱逛，当然，他不会轻易地回头。Angel想去广场，那么，他什么时候才能到呢？</a></li>
+</ul>
+</li>
+<li><a href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0-3">【问题描述】</a><br>
+*
+<ul>
+<li><a href="#angel%E5%B7%B2%E7%BB%8F%E4%B9%B0%E4%BA%86%E4%B8%80%E4%BB%BD%E5%9C%A3%E8%AF%9E%E5%B2%9B%E7%9A%84%E5%9C%B0%E5%9B%BE%E5%9C%B0%E5%9B%BE%E4%B8%8A%E6%9C%89nn-100%E4%B8%AA%E4%BA%A4%E5%8F%89%E8%B7%AF%E5%8F%A3%E4%BA%A4%E5%8F%89%E8%B7%AF%E5%8F%A3%E4%B9%8B%E9%97%B4%E6%9C%89%E9%A9%AC%E8%B7%AF%E7%9B%B8%E8%BF%9E%E6%8E%A5%E4%B8%8D%E8%B6%85%E8%BF%871000%E6%9D%A1%E9%A9%AC%E8%B7%AF">Angel已经买了一份圣诞岛的地图，地图上有N(N &lt;= 100)个交叉路口，交叉路口之间有马路相连接(不超过1000条马路)。</a></li>
+<li><a href="#%E5%9B%A0%E4%B8%BA%E5%9C%A3%E8%AF%9E%E5%B2%9B%E7%9A%84%E4%BA%BA%E9%81%B5%E5%BE%AA%E5%A5%87%E6%80%AA%E7%9A%84%E8%A7%84%E5%88%99%E9%81%93%E8%B7%AF%E9%83%BD%E6%98%AF%E5%8D%95%E5%90%91%E7%9A%84%E4%B8%8D%E5%90%8C%E7%9A%84%E9%81%93%E8%B7%AF%E4%B9%8B%E9%97%B4%E6%9C%89%E4%B8%80%E5%AE%9A%E7%9A%84%E8%B7%9D%E7%A6%BB%E6%88%91%E4%BB%AC%E5%81%87%E8%AE%BEangel%E6%89%80%E5%9C%A8%E7%9A%84%E5%9C%B0%E7%82%B9%E4%B8%BA%E7%82%B91%E5%B9%BF%E5%9C%BA%E6%89%80%E5%9C%A8%E7%82%B9%E4%B8%BAn">因为圣诞岛的人遵循奇怪的规则，道路都是单向的，不同的道路之间有一定的距离，我们假设Angel所在的地点为点1，广场所在点为N。</a></li>
+<li><a href="#%E5%81%87%E8%AE%BEangel%E8%B5%B0%E4%B8%80%E5%8D%95%E4%BD%8D%E8%B7%9D%E7%A6%BB%E9%9C%80%E8%A6%81%E4%B8%80%E5%8D%95%E4%BD%8D%E6%97%B6%E9%97%B4">假设Angel走一单位距离需要一单位时间。</a></li>
+<li><a href="#%E9%97%AEangel%E6%9C%80%E6%97%A9%E5%92%8C%E6%9C%80%E8%BF%9F%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%88%B0%E8%BE%BE%E5%B9%BF%E5%9C%BA">问Angel最早和最迟什么时候到达广场？</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F-2">【输入格式】</a><br>
+*
+<ul>
+<li><a href="#%E7%AC%AC%E4%B8%80%E8%A1%8C%E4%B8%BAn-mn%E6%98%AF%E8%B7%AF%E5%8F%A3%E7%9A%84%E6%95%B0%E9%87%8Fm%E6%98%AF%E9%A9%AC%E8%B7%AF%E7%9A%84%E6%95%B0%E9%87%8F">第一行为N, M，N是路口的数量，M是马路的数量。</a></li>
+<li><a href="#%E5%90%8Em%E8%A1%8C%E6%AF%8F%E8%A1%8C3%E4%B8%AA%E6%95%B4%E6%95%B0x-y-weight%E4%BB%A3%E8%A1%A8%E4%B8%80%E6%9D%A1%E4%BB%8Ex%E8%B7%AF%E5%8F%A3%E5%88%B0y%E8%B7%AF%E5%8F%A3%E9%95%BF%E5%BA%A6%E4%B8%BAweight%E7%9A%84%E9%A9%AC%E8%B7%AF">后M行，每行3个整数X, Y, Weight，代表一条从X路口到Y路口，长度为Weight的马路。</a></li>
+</ul>
+</li>
+<li><a href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F-2">【输出格式】</a><br>
+*
+<ul>
+<li><a href="#%E5%AF%B9%E4%BA%8E%E6%AF%8F%E7%BB%84%E6%95%B0%E6%8D%AE%E7%AC%AC%E4%B8%80%E8%A1%8C%E8%AF%B7%E8%BE%93%E5%87%BA%E6%9C%80%E5%B0%91%E6%97%B6%E9%97%B4%E7%AC%AC%E4%BA%8C%E8%A1%8C%E8%AF%B7%E8%BE%93%E5%87%BA%E6%9C%80%E8%BF%9F%E6%97%B6%E9%97%B4%E8%A6%81%E6%98%AF%E5%8F%AF%E6%80%9C%E7%9A%84angel%E6%B0%B8%E8%BF%9C%E5%88%B0%E4%B8%8D%E4%BA%86%E5%B9%BF%E5%9C%BA%E9%82%A3%E5%B0%B1%E5%8F%AA%E8%A6%81%E8%BE%93%E5%87%BAnever">对于每组数据，第一行请输出最少时间，第二行请输出最迟时间，要是可怜的Angel永远到不了广场，那就只要输出“Never”。</a></li>
+</ul>
+</li>
+<li><a href="#%E6%A0%B7%E4%BE%8B%E6%95%B0%E6%8D%AE">【样例数据】</a><br>
+*
+<ul>
+<li><a href="#input">Input</a></li>
+<li><a href="#5-5">5 5</a></li>
+<li><a href="#1-2-1">1 2 1</a></li>
+<li><a href="#1-4-10">1 4 10</a></li>
+<li><a href="#2-3-1">2 3 1</a></li>
+<li><a href="#3-4-1">3 4 1</a></li>
+<li><a href="#4-5-1">4 5 1</a></li>
+<li><a href="#output">Output</a></li>
+<li><a href="#4-2">4</a></li>
+<li><a href="#11">11</a>
+<ul>
+<li><a href="#%E7%AE%80%E5%8D%95%E7%9A%84%E5%9B%BE%E8%AE%BA%E6%9C%80%E9%95%BF%E8%B7%AF-%E6%9C%80%E7%9F%AD%E8%B7%AF">简单的图论（最长路 + 最短路）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://gzhffIThh.github.io/post/190809noip-mo-ni-sai/">
+              <h3 class="post-title">
+                190809noip模拟赛
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://gzhffIThh.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
