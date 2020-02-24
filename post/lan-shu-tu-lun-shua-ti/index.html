@@ -7,7 +7,7 @@
 <meta name="description" content="gzhffIThh&#39;s blog">
 <meta name="theme-color" content="#000">
 <title>蓝书图论刷题 | gzhffIThh</title>
-<link rel="shortcut icon" href="https://gzhffIThh.github.io/favicon.ico?v=1582517581788">
+<link rel="shortcut icon" href="https://gzhffIThh.github.io/favicon.ico?v=1582517923110">
 <link rel="stylesheet" href="https://gzhffIThh.github.io/styles/main.css">
 
 <link rel="stylesheet" href="/media/css/muse.css">
@@ -488,12 +488,12 @@ window.addEventListener('load', function() {
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
+      <span>3分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>331<span class="pc-show">字数</span></span>
+      <span>357<span class="pc-show">字数</span></span>
     </span>
   </div>
 </header>
@@ -516,64 +516,70 @@ using namespace std;
 typedef pair&lt;int, int&gt; PII;
 const int MAXN = 1001 * 1001;
 const int MAXP = 10001 * 1001;
+inline int readint() {
+    int a = 0, f = 1;
+    char c = getchar();
+    while(c &gt; '9' || c &lt; '0') { if(c == '-') f = -1; c = getchar(); }
+    while(c &gt;= '0' &amp;&amp; c &lt;= '9') { a = a * 10 + c - '0'; c = getchar(); }
+    return a * f;
+}
 int n, p, k;
 int head[MAXN], nxt[MAXP], v[MAXP], w[MAXP], cnt;
 int dis[MAXN], used[MAXN];
 void add(int x, int y, int z)
 {
-nxt[++cnt] = head[x];
-head[x] = cnt;
-v[cnt] = y;
-w[cnt] = z;
+    nxt[++cnt] = head[x];
+    head[x] = cnt;
+    v[cnt] = y;
+    w[cnt] = z;
 }
 int Dijkstra()
 {
-memset(dis, 0x3f, sizeof dis);
-memset(used, 0, sizeof used);
-priority_queue&lt;PII, vector&lt;PII &gt;, greater&lt;PII &gt; &gt; heap;
-heap.push({0, 1});
-dis[1] = 0;
-while(!heap.empty())
-{
-    while(used[heap.top().second]) heap.pop();
-    int u = heap.top().second; heap.pop();
-    used[u] = 1;
-    for (int i = head[u]; i; i = nxt[i])
+    memset(dis, 0x3f, sizeof dis);
+    priority_queue&lt;PII, vector&lt;PII &gt;, greater&lt;PII &gt; &gt; heap;
+    heap.push({0, 1});
+    dis[1] = 0;
+    while(!heap.empty())
     {
-        int z = max(w[i], dis[u]);
-        if(dis[v[i]] &gt; z)
+        while(used[heap.top().second]) heap.pop();
+        int u = heap.top().second; heap.pop();
+        used[u] = 1;
+        for (int i = head[u]; i; i = nxt[i])
         {
-            dis[v[i]] = z;
-            heap.push({dis[v[i]], v[i]});
+            int z = max(w[i], dis[u]);
+            if(dis[v[i]] &gt; z)
+            {
+                dis[v[i]] = z;
+                heap.push({dis[v[i]], v[i]});
+            }
         }
+        if(u == (k + 1) * n) return dis[u];
     }
-    if(u == (k + 1) * n) return dis[u];
-}
-if(dis[(k + 1) * n] == 1061109567)
-    return -1;
-return dis[(k + 1) * n];
+    if(dis[(k + 1) * n] == 1061109567)
+        return -1;
+    return dis[(k + 1) * n];
 }
 int main()
 {
-scanf(&quot;%d %d %d&quot;, &amp;n, &amp;p, &amp;k);
-for (int i = 1; i &lt;= p; i++)
-{
-    int x, y, z;
-    scanf(&quot;%d %d %d&quot;, &amp;x, &amp;y, &amp;z);
-    add(x, y, z);
-    add(y, x, z);
-    for (int j = 1; j &lt;= k; j++)//k+1层
+    n = readint(), p = readint(), k = readint();
+    for (int i = 1; i &lt;= p; i++)
     {
-        add(n * (j - 1) + x, n * j + y, 0);
-        add(n * (j - 1) + y, n * j + x, 0);
-        add(n * j + x, n * j + y, z);
-        add(n * j + y, n * j + x, z);
+        int x, y, z;
+        x = readint(), y = readint(), z = readint();
+        add(x, y, z);
+        add(y, x, z);
+        for (int j = 1; j &lt;= k; j++)//k+1层
+        {
+            add(n * (j - 1) + x, n * j + y, 0);
+            add(n * (j - 1) + y, n * j + x, 0);
+            add(n * j + x, n * j + y, z);
+            add(n * j + y, n * j + x, z);
+        }
     }
-}
-for (int j = 1; j &lt;= k; j++)
-    add(n * j, n * (j + 1), 0);//防止有路径小于k条边
-printf(&quot;%d&quot;, Dijkstra());
-return 0;
+    for (int j = 1; j &lt;= k; j++)
+        add(n * j, n * (j + 1), 0);//防止有路径小于k条边
+    printf(&quot;%d&quot;, Dijkstra());
+    return 0;
 }
 </code></pre>
 
