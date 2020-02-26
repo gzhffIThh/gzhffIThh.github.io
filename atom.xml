@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://gzhffIThh.github.io</id>
     <title>gzhffIThh&apos;s blog</title>
-    <updated>2020-02-24T07:46:54.957Z</updated>
+    <updated>2020-02-26T01:31:55.614Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://gzhffIThh.github.io"/>
     <link rel="self" href="https://gzhffIThh.github.io/atom.xml"/>
@@ -16,6 +16,22 @@
         <link href="https://gzhffIThh.github.io/post/zhong-kao-fu-xi-ji-hua/">
         </link>
         <updated>2020-02-24T03:41:14.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="生物">生物</h3>
+<p>所有的章节在2模前看5遍以上<br>
+做专题练习（重点实验）</p>
+<h3 id="化学">化学</h3>
+<p>复习基础<br>
+做优加专题</p>
+<h3 id="物理">物理</h3>
+<p>做压轴题<br>
+科学整理考点</p>
+<h3 id="英语">英语</h3>
+<p>做中考卷<br>
+练习作文</p>
+<h3 id="社会">社会</h3>
+<p>抓紧时间复习基础<br>
+做精编</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[网络流]]></title>
@@ -23,6 +39,40 @@
         <link href="https://gzhffIThh.github.io/post/wang-luo-liu/">
         </link>
         <updated>2020-02-23T13:36:23.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="算法笔记">算法笔记</h1>
+<ul>
+<li>
+<h2 id="算法ekedmond-karpdinic-isap">算法：EK（Edmond-Karp），Dinic， ISAP</h2>
+</li>
+</ul>
+<h2 id="解决问题">解决问题：</h2>
+<p>网络流中的最大流和费用流的求解</p>
+<h3 id="前置">前置：</h3>
+<ul>
+<li><strong>网络</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mo>=</mo><mo>(</mo><mi>V</mi><mo separator="true">,</mo><mi>E</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">G=(V,E)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mclose">)</span></span></span></span> 是一个有限的有向图，它的每条边<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo>)</mo><mo>∈</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">(u,v) \in E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span></span></span></span>都有一个非负值实数的<strong>容量</strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">c(u,v)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">c</span><span class="mopen">(</span><span class="mord mathdefault">u</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span>，图中还有两个特殊节点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>∈</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">S \in V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>∈</mo><mi>V</mi><mo>(</mo><mi>S</mi><mi mathvariant="normal">≠</mi><mi>T</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">T \in V(S \ne T)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72243em;vertical-align:-0.0391em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mrel"><span class="mord"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="rlap"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="inner"><span class="mrel"></span></span><span class="fix"></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span></span><span class="mrel">=</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mclose">)</span></span></span></span>，分别为<strong>源点</strong>和<strong>汇点</strong>。</li>
+</ul>
+<h3 id="问题一何为网络最大流">问题一：何为网络最大流？</h3>
+<p>求一个网络中源点到汇点的最大流量。</p>
+<p>简单来说，就是个你一个有向图，每条边上有一个容量，同时给定一个源点s和汇点t，让你求从源点到汇点的最大流量。</p>
+<p>如果难以理解的话，可以将图想象成一个水管网，每条边为一个水管，每个水管有一个容量（超过了就会爆），想在从源点中通入无限的水，请问从汇点会流出多少水。</p>
+<p>如果还不能理解，也可以理解为单位时间内从原点中通入无限的水，问单位时间内从汇点会流出多少水。</p>
+<h3 id="问题二何为费用流">问题二：何为费用流？</h3>
+<p>简单来说，就是在最大流的基础上，加一个每一边上单位流量的费用，让你求保证最大流的基础上，求出最小的费用。</p>
+<h3 id="问题三何为增广路">问题三：何为增广路？</h3>
+<p>就是，再找到最大流的过程中，每次找到使当前流量增加的一条路径。</p>
+<h2 id="解决">解决：</h2>
+<h3 id="1ekedmond-karp算法">1.EK（Edmond-Karp）算法</h3>
+<ul>
+<li>反向边 + BFS找增广路</li>
+<li>复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><msup><mi>m</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(nm^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mord"><span class="mord mathdefault">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></li>
+<li><strong>反向边</strong>：使程序在走过一条不是最优的增广路后可以换一条进行尝试，简单讲让程序有反悔的机会。</li>
+<li>code：<a href="https://gzhffithh.blog.luogu.org/wang-lao-liu-zui-tai-liu-ek">EK最大流</a></li>
+</ul>
+<h3 id="2dinic算法">2.dinic算法</h3>
+<p><a href="https://www.cnblogs.com/linzhengmin/p/9313216.html">学习</a></p>
+<h3 id="3isapimproved-shortest-augumenting-path算法">3.ISAP（Improved Shortest Augumenting Path）算法</h3>
+<p><a href="http://www.renfei.org/blog/isap.html">学习中</a></p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[凸包学习]]></title>
@@ -30,6 +80,71 @@
         <link href="https://gzhffIThh.github.io/post/tu-bao-xue-xi/">
         </link>
         <updated>2020-02-23T13:35:56.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="凸包学习">凸包学习</h1>
+<h3 id="概念">概念</h3>
+<ul>
+<li><strong>向量</strong>:  有方向的量 如从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">A(x_1, y_2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">A</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mo>(</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">B(x_2, y_2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>的向量表示为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>A</mi><mi>B</mi></mrow><mo stretchy="true">→</mo></mover><mo>=</mo><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>1</mn></msub><mo>−</mo><msub><mi>y</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\overrightarrow{AB}=(x_1-x_2,y_1-y_2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.20533em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.20533em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span><span class="svg-align" style="top:-3.6833299999999998em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="height:0.522em;min-width:0.888em;"><svg width='400em' height='0.522em' viewBox='0 0 400000 522' preserveAspectRatio='xMaxYMin slice'><path d='M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z'/></svg></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></li>
+<li><strong>点积</strong>:  A在B所在方向的投影的模长和B的模长的乘积,来可以判两个向量是否垂直<br>
+如:<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>O</mi><mi>A</mi></mrow><mo stretchy="true">→</mo></mover><mo>=</mo><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>1</mn></msub><mo>)</mo><mo separator="true">,</mo><mover accent="true"><mrow><mi>O</mi><mi>B</mi></mrow><mo stretchy="true">→</mo></mover><mo>=</mo><mo>(</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\overrightarrow{OA}=(x_1,y_1),\overrightarrow{OB}=(x_2,y_2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.20533em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.20533em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault">A</span></span></span><span class="svg-align" style="top:-3.6833299999999998em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="height:0.522em;min-width:0.888em;"><svg width='400em' height='0.522em' viewBox='0 0 400000 522' preserveAspectRatio='xMaxYMin slice'><path d='M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z'/></svg></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.45533em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.20533em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span><span class="svg-align" style="top:-3.6833299999999998em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="height:0.522em;min-width:0.888em;"><svg width='400em' height='0.522em' viewBox='0 0 400000 522' preserveAspectRatio='xMaxYMin slice'><path d='M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z'/></svg></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>O</mi><mi>A</mi></mrow><mo stretchy="true">→</mo></mover><mo>⋅</mo><mover accent="true"><mrow><mi>O</mi><mi>B</mi></mrow><mo stretchy="true">→</mo></mover><mo>=</mo><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>1</mn></msub><mo>−</mo><msub><mi>y</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\overrightarrow{OA}\cdot{\overrightarrow{OB}}=(x_1-x_2, y_1-y_2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.20533em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.20533em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault">A</span></span></span><span class="svg-align" style="top:-3.6833299999999998em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="height:0.522em;min-width:0.888em;"><svg width='400em' height='0.522em' viewBox='0 0 400000 522' preserveAspectRatio='xMaxYMin slice'><path d='M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z'/></svg></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.20533em;vertical-align:0em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.20533em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span><span class="svg-align" style="top:-3.6833299999999998em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="height:0.522em;min-width:0.888em;"><svg width='400em' height='0.522em' viewBox='0 0 400000 522' preserveAspectRatio='xMaxYMin slice'><path d='M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></li>
+<li><strong>叉积</strong>:<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>O</mi><mi>A</mi></mrow><mo stretchy="true">→</mo></mover><mo>⋅</mo><mover accent="true"><mrow><mi>O</mi><mi>B</mi></mrow><mo stretchy="true">→</mo></mover><mo>=</mo><msub><mi>x</mi><mn>1</mn></msub><msub><mi>y</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub><msub><mi>y</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\overrightarrow{OA}\cdot{\overrightarrow{OB}}=x_1y_2-x_2y_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.20533em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.20533em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault">A</span></span></span><span class="svg-align" style="top:-3.6833299999999998em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="height:0.522em;min-width:0.888em;"><svg width='400em' height='0.522em' viewBox='0 0 400000 522' preserveAspectRatio='xMaxYMin slice'><path d='M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z'/></svg></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.20533em;vertical-align:0em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.20533em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span><span class="svg-align" style="top:-3.6833299999999998em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="height:0.522em;min-width:0.888em;"><svg width='400em' height='0.522em' viewBox='0 0 400000 522' preserveAspectRatio='xMaxYMin slice'><path d='M0 241v40h399891c-47.3 35.3-84 78-110 128
+-16.7 32-27.7 63.7-33 95 0 1.3-.2 2.7-.5 4-.3 1.3-.5 2.3-.5 3 0 7.3 6.7 11 20
+ 11 8 0 13.2-.8 15.5-2.5 2.3-1.7 4.2-5.5 5.5-11.5 2-13.3 5.7-27 11-41 14.7-44.7
+ 39-84.5 73-119.5s73.7-60.2 119-75.5c6-2 9-5.7 9-11s-3-9-9-11c-45.3-15.3-85
+-40.5-119-75.5s-58.3-74.8-73-119.5c-4.7-14-8.3-27.3-11-40-1.3-6.7-3.2-10.8-5.5
+-12.5-2.3-1.7-7.5-2.5-15.5-2.5-14 0-21 3.7-21 11 0 2 2 10.3 6 25 20.7 83.3 67
+ 151.7 139 205zm0 0v40h399900v-40z'/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><br>
+是个向量，但垂直于平面，当做标量就行了。<br>
+<strong>用途:判断顺逆时针</strong><br>
+<img src="https://gzhffIThh.github.io/post-images/1582513836372.jpg" alt="如图" loading="lazy"></li>
+</ul>
+<h3 id="解决">解决</h3>
+<ul>
+<li><strong>凸包</strong>:最小的凸多边形覆盖所有点</li>
+</ul>
+<p>求法1:将坐标中的点按<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>−</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x-y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>排序，并用栈维护一条凸边，每到一个点，用叉积判断栈首3个元素是否会形成凹边，形成则出栈，否则就入栈。<br>
+从左下到右上计算下半凸包，再从左下到右上计算上半凸包，合并即可。</p>
+<p><a href="https://www.luogu.com.cn/problem/P2742">P2742</a><br>
+<a href="https://gzhffithh.blog.luogu.org/tu-bao-p2742-post">code</a></p>
+<p>求法2:极角排序</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[BFS心得]]></title>
@@ -37,6 +152,64 @@
         <link href="https://gzhffIThh.github.io/post/bfs-xin-de/">
         </link>
         <updated>2020-02-23T13:34:56.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="一-bfs思想">一、BFS思想</h1>
+<h3 id="1-保存每个状态当前坐标步数等从每个有效状态进行分身并再保存每个分身状态-直到到目标状态坐标目标图变量数值等">1.  保存每个状态（当前坐标，步数等），从每个有效状态进行“分身”，并再保存每个分身状态。。。直到到目标状态（坐标，目标图，变量数值等）</h3>
+<h3 id="2dfs-和-bfs区别">2.DFS 和 BFS区别：</h3>
+<h4 id="dfs先尝试一种情况一直到不能再进行了回溯到上一个情况再换一个尝试">DFS：先尝试一种情况一直到不能再进行了，回溯到上一个情况再换一个尝试</h4>
+<h4 id="bfs-将当前可行的情况都保存在分别进行拓展">BFS: 将当前可行的情况都保存，在分别进行拓展</h4>
+<h3 id="3解决的问题要求搜索的问题中只有相邻的状态有关系">3.解决的问题（要求搜索的问题中只有相邻的状态有关系）：</h3>
+<h4 id="1最少花费-步数">（1）最少花费、步数</h4>
+<p>由于其以层数增长，每种状态只保存一次，第一次到目标状态时就是最快的速度。</p>
+<p><a href="https://www.luogu.org/problemnew/show/P1135">P1135 奇怪的电梯</a></p>
+<p><a href="https://www.luogu.org/problemnew/show/P1443">P1443 马的遍历</a></p>
+<h4 id="2图的染色遍历">（2）图的染色(遍历）</h4>
+<h1 id="二-实现方法">二、实现方法</h1>
+<h3 id="1记录状态-结构体打包">1.记录状态 -&gt;结构体（打包）</h3>
+<pre><code class="language-cpp">struct point 
+{
+	int x, y;//最常用
+    		//坐标位置
+    int no;//某种编号
+    int step//记录步数、花费等
+    int x//记录当前的某种信息
+} s, t; // s -&gt; 起始状态
+		// t -&gt; 目标状态 
+</code></pre>
+<h3 id="2保存当前的有效状态-队列">2.保存当前的有效状态-&gt;队列</h3>
+<h5 id="1stl-queue">(1)STL ..(queue)</h5>
+<pre><code class="language-cpp">queue&lt;point&gt; Q;
+               //创建了一个命名为Q的队列
+               //队列中的数据类型为point（结构体）
+//基本操作
+Q.push(s); //将起始状态入队
+Q.push(v); //将有效状态入队
+Q.pop(); //将队列中第一个元素弹出
+Q.front(); // 队列的第一个元素
+</code></pre>
+<h5 id="2数组模拟队列">(2)数组模拟队列</h5>
+<pre><code class="language-cpp">struct point q[10014];//q数组
+int f = 1, e = 1;//f -&gt; 队首指针
+				 //e -&gt; 队尾指针
+q[1] = s; //将起始状态入队
+q[++e] = v; //将有效状态入队
+f++;  //将队列中第一个元素删去
+q[f] // 队列的第一个元素
+</code></pre>
+<h3 id="3哈希判重">3.哈希判重</h3>
+<h5 id="1直接以当前位置哈希">(1)直接以当前位置哈希</h5>
+<pre><code class="language-cpp">bool used[x][y];
+bool used[node];
+</code></pre>
+<h5 id="2状压二进制当数组哈希位数不够用时">(2)状压二进制(当数组哈希位数不够用时)</h5>
+<p>以<a href="https://www.luogu.org/problemnew/show/P4011">P4011 孤岛营救问题</a><br>
+为例</p>
+<pre><code class="language-cpp">bool used[key][x][y]；//用二进制存钥匙
+		//二进制第i位为1 -&gt;有编号为i的钥匙
+        //为0没有
+        //使用&gt;&gt; 和 &lt;&lt; 检测某位有无钥匙
+</code></pre>
+<h5 id="3对大质数求余">(3）对大质数求余</h5>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[190806 noip模拟赛]]></title>
@@ -44,6 +217,330 @@
         <link href="https://gzhffIThh.github.io/post/190806-noip-mo-ni-sai/">
         </link>
         <updated>2020-02-23T13:34:19.000Z</updated>
+        <content type="html"><![CDATA[<h6 id="这次模拟赛t1当时未想到-t3难一点">这次模拟赛T1当时未想到。。。T3难一点</h6>
+<h6 id="score213">score：213</h6>
+<hr>
+<h2 id="t1-数字游戏">T1 数字游戏</h2>
+<h3 id="问题描述">【问题描述】</h3>
+<h5 id="大家列队后都觉得累了于是一起坐到院子中的草地上休息-这时anna突然想跟她的最大竞争对手cici玩一个数字游戏她要你编写程序帮助她取得胜利">大家列队后，都觉得累了，于是一起坐到院子中的草地上休息。这时Anna突然想跟她的最大竞争对手Cici玩一个数字游戏，她要你编写程序帮助她取得胜利。</h5>
+<h5 id="第i次游戏初始时有一个整数n_i1-n_i-1000000游戏以anna先开始然后是cici这样两人轮流进行-在每一轮中一个游戏者可以把当前整数中减去原整数中最大的数字或最小的非零数字形成一个新的整数-例如从3014开始我们可以减去1或4分别形成整数3013或-3010-直到这个整数变为0时游戏结束-游戏结束时最后轮到那人就是胜利者">第i次游戏初始时有一个整数N_i(1 &lt;= N_i &lt;= 1,000,000)，，游戏以Anna先开始,然后是Cici，这样两人轮流进行。在每一轮中，一个游戏者可以把当前整数中减去原整数中最大的数字或最小的非零数字，形成一个新的整数。例如从3014开始，我们可以减去1或4，分别形成整数3013或 3010. 直到这个整数变为0时游戏结束。游戏结束时最后轮到那人就是胜利者。</h5>
+<h5 id="anna和cici总共进行g1-g-100次游戏-请你帮助确定每次游戏到底是anna还是cici获得胜利-anna和cici两人都是足够聪明的如果轮到某人时对方留给她的数是必胜的她将毫不犹豫按最优策略取得胜利">Anna和Cici总共进行G(1 &lt;= G &lt;= 100)次游戏。请你帮助确定每次游戏到底是Anna还是Cici获得胜利。Anna和Cici两人都是足够聪明的，如果轮到某人时，对方留给她的数是必胜的，她将毫不犹豫按最优策略取得胜利。</h5>
+<h5 id="假如某次游戏n_i13-anna先走并从中减去3剩下10然后cici只能减去1剩下9anna减去9剩下0游戏结束anna取得这次游戏的胜利">假如某次游戏N_i=13。Anna先走并从中减去3，剩下10，然后Cici只能减去1，剩下9，Anna减去9，剩下0游戏结束，Anna取得这次游戏的胜利。</h5>
+<h3 id="输入格式">【输入格式】</h3>
+<h5 id="第1行一个整数g">* 第1行：一个整数G</h5>
+<h5 id="第2g1行-第i1行包含一个整数-n_i">* 第2..G+1行: 第i+1行包含一个整数: N_i</h5>
+<h3 id="输出格式">【输出格式】</h3>
+<h5 id="第1g行-第i行包含yes-表示anna取得第i次游戏的胜利否则为no">* 第1..G行: 第i行包含&quot;YES&quot; ，表示Anna取得第i次游戏的胜利，否则为&quot;NO&quot;。</h5>
+<h3 id="输入样例cdgamein">【输入样例】cdgame.in</h3>
+<h5 id="2">2</h5>
+<h5 id="9">9</h5>
+<h5 id="10">10</h5>
+<h3 id="输出样例cdgameout">【输出样例】cdgame.out</h3>
+<h5 id="yes">YES</h5>
+<h5 id="no">NO</h5>
+<hr>
+<h6 id="第一题是简单的博弈论对于一个数若它的后继状态均先手必胜则当前必败反之必胜">第一题是简单的博弈论，对于一个数，若它的后继状态均先手必胜，则当前必败；反之，必胜。</h6>
+<h6 id="用fi表示i这个数字先手情况-1表示必胜0表示必败">用f[i]表示i这个数字先手情况 1表示必胜，0表示必败</h6>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+inline int read()
+{
+    int f = 1, a = 0;
+    char c = getchar();
+    while(c &gt; '9' || c &lt; '0'){if(c == '-') f = -f;c = getchar();}
+    while(c &lt;= '9' &amp;&amp; c &gt;= '0'){a = a * 10 + c - '0';c = getchar();}
+    return a * f; 
+}
+int t;
+int n;
+int f[1000005];
+int minx(int x)
+{
+	int d = x, m = 9;
+	while(d &gt; 0)
+	{
+		if(d % 10 != 0) m = min(m, d % 10);
+		d /= 10;
+	}
+	return x - m;
+}
+int maxx(int x)
+{
+	int d = x, m = 0;
+	while(d &gt; 0)
+	{
+		m = max(m, d % 10);
+		d /= 10;
+	}
+	return x - m;
+}
+int main()
+{
+	t = read();
+	f[0] = 0;
+	for (int i = 1; i &lt;= 1000000; i++)
+	{
+		if(f[minx(i)] == 1 &amp;&amp; f[maxx(i)] == 1) f[i] = 0;
+		else f[i] = 1;
+	}
+	while(t--)
+	{
+		n = read();
+		if(f[n] == 1) cout &lt;&lt; &quot;YES\n&quot;;
+		else cout &lt;&lt; &quot;NO\n&quot;;
+	}
+	return 0;
+}
+</code></pre>
+<hr>
+<h2 id="t2-电话时间">T2 电话时间</h2>
+<h3 id="问题描述-2">【问题描述】</h3>
+<h5 id="某人总是花很多时间给父母打电话-有一次他记录了打电话的开始时间和结束时刻t1和t2请你帮他算算此次通话一共用了多少秒-又有一次他记录了打电话的开始时刻t1和通话的时间长度len请你帮他计算他在什么时刻结束通话">某人总是花很多时间给父母打电话。有一次他记录了打电话的开始时间和结束时刻t1和t2，请你帮他算算此次通话一共用了多少秒。又有一次，他记录了打电话的开始时刻t1和通话的时间长度len，请你帮他计算他在什么时刻结束通话。</h5>
+<h5 id="已知每次通话时间小于24个小时">已知每次通话时间小于24个小时。</h5>
+<h3 id="输入文件">【输入文件】</h3>
+<h5 id="输入文件phonein的第一行为一个正整数t表示了数据组数">输入文件phone.in的第一行为一个正整数T，表示了数据组数。</h5>
+<h5 id="接下来t行每行第一个数为k">接下来T行，每行第一个数为k：</h5>
+<h5 id="如果k-0接下来包含两个时间t1和t2表示了打电话的开始时间和结束时刻用一个空格隔开时间格式为hhmmss其中0hh230mmss59-hh-mm和ss都是两位数字因此012是不合法的时间应写作000102-你应该对这个询问输出通话时间长度答案一定为区间086400之内的非负整数">如果k = 0，接下来包含两个时间t1和t2，表示了打电话的开始时间和结束时刻，用一个空格隔开，时间格式为HH:MM:SS，其中0≤HH≤23,0≤MM,SS≤59。HH、MM和SS都是两位数字，因此0:1:2是不合法的时间（应写作00:01:02）。你应该对这个询问输出通话时间长度，答案一定为区间[0,86400)之内的非负整数。</h5>
+<h5 id="如果k-1接下来包含一个时间t1和一个非负整数len表示了打电话的开始时刻与通话时间长度用一个空格隔开时间格式同为hhmmss同样时间小于24个小时即len86400-你应该对这个询问输出结束通话的时刻同为hhmmss格式">如果k = 1，接下来包含一个时间t1和一个非负整数len，表示了打电话的开始时刻与通话时间长度，用一个空格隔开，时间格式同为HH:MM:SS，同样时间小于24个小时，即len&lt;86400。你应该对这个询问输出结束通话的时刻，同为HH:MM:SS格式。</h5>
+<h3 id="输出文件">【输出文件】</h3>
+<h5 id="输出文件phoneout包含t个整数或者时间对于每个询问输出对应的答案">输出文件phone.out包含T个整数或者时间，对于每个询问输出对应的答案。</h5>
+<h3 id="样例输入">【样例输入】</h3>
+<h5 id="4">4</h5>
+<h5 id="0-010203-040506">0 01:02:03 04:05:06</h5>
+<h5 id="0-235959-000000">0 23:59:59 00:00:00</h5>
+<h5 id="1-000003-3">1 00:00:03 3</h5>
+<h5 id="1-235958-4">1 23:59:58 4</h5>
+<h3 id="样例输出">【样例输出】</h3>
+<h5 id="10983">10983</h5>
+<h5 id="1">1</h5>
+<h5 id="000006">00:00:06</h5>
+<h5 id="000002">00:00:02</h5>
+<h3 id="数据规模与约定">【数据规模与约定】</h3>
+<h5 id="对于20的数据t-10">对于20%的数据，T ≤ 10；</h5>
+<h5 id="对于40的数据t-100">对于40%的数据，T ≤ 100；</h5>
+<h5 id="对于100的数据t-100">对于100%的数据，T ≤ 100</h5>
+<hr>
+<h6 id="简单的模拟">简单的模拟</h6>
+<h6 id="注意过夜的情况">注意过夜的情况</h6>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+#define ll long long
+inline ll read()
+{
+    int f = 1, a = 0; char c = getchar();
+    while(c &gt; '9' || c &lt; '0'){if(c == '-') f = -f;c = getchar();}
+    while(c &lt;= '9' &amp;&amp; c &gt;= '0'){a = a * 10 + c - '0';c = getchar();}
+    return a * f; 
+}
+ll T, s1, s2, s3, t1, t2, t3, tmps, tmpt, len, k;
+int main()
+{
+///	freopen(&quot;phone.in&quot;, &quot;r&quot;, stdin);
+//	freopen(&quot;phone.out&quot;, &quot;w&quot;, stdout);
+	T = read();
+	while(T--)
+	{
+		k = read();
+		if(k == 0)
+		{
+			s1 = read(), s2 = read(), s3 = read();
+			t1 = read(), t2 = read(), t3 = read();
+			tmps = s1 * 60 * 60 + s2 * 60 + s3;
+			tmpt = t1 * 60 * 60 + t2 * 60 + t3;
+			if(tmpt &lt; tmps) tmpt += 86400;
+			printf(&quot;%lld\n&quot;, tmpt - tmps);
+		}
+		if(k == 1)
+		{
+			s1 = read(), s2 = read(), s3 = read();len = read(); 
+			tmps = (s1 * 60 * 60 + s2 * 60 + s3 + len) % 86400;
+			t1 = tmps / 3600, t2 = (tmps % 3600) / 60, t3 = tmps % 60;
+			if(t1 &lt; 10) printf(&quot;0%lld:&quot;, t1);
+			else printf(&quot;%lld:&quot;, t1);
+			if(t2 &lt; 10) printf(&quot;0%lld:&quot;, t2);
+			else printf(&quot;%lld:&quot;, t2);
+			if(t3 &lt; 10) printf(&quot;0%lld\n&quot;, t3);
+			else printf(&quot;%lld\n&quot;, t3);
+		}
+	}	
+	return 0;
+}
+</code></pre>
+<hr>
+<h2 id="t3-min">T3  min</h2>
+<h3 id="题目描述">【题目描述】</h3>
+<h5 id="给定n个数请你选出两段连续的数满足每段的长度都不超过l两段之间">给定N个数，请你选出两段连续的数，满足每段的长度都不超过L，两段之间</h5>
+<h5 id="不相交且选出的数和最大">不相交，且选出的数和最大。</h5>
+<h3 id="输入文件-2">【输入文件】</h3>
+<h5 id="第一行-n-l">第一行 N L</h5>
+<h5 id="输出文件-2">输出文件</h5>
+<h5 id="最大的和">最大的和</h5>
+<h3 id="样例输入-2">【样例输入】</h3>
+<h5 id="9-3">9 3</h5>
+<h5 id="1-3-1-3-3-3-1-3-1">1 3 -1 3 -3 3 -1 3 1</h5>
+<h3 id="样例输出-2">【样例输出】</h3>
+<h5 id="10-2">10</h5>
+<h3 id="数据约定">【数据约定】</h3>
+<h5 id="33nl1000">33%：N,L&lt;=1000</h5>
+<h5 id="66nl100000">66%：N,L&lt;=100000</h5>
+<h5 id="100nl1000000">100%：N,L&lt;=1000000</h5>
+<hr>
+<h6 id="想法一on4-暴力枚举-tle">想法一：O(n^4) 暴力枚举    -&gt;    TLE</h6>
+<h6 id="想法二两遍从左到右的单调队列找最值-不一定正确可能一开始的最大区间分开成两边的两个区间更优">想法二：两遍从左到右的单调队列找最值 -&gt;不一定正确（可能一开始的最大区间分开成两边的两个区间更优）</h6>
+<h6 id="正解-fi-表示-从前到i为止的最大连续区间-gi表示-从后到i为止的最大连续区间">正解: f[i] 表示 从前到i为止的最大连续区间 ， g[i]表示 从后到i为止的最大连续区间</h6>
+<h6 id="再on枚举-fi-gi-1-的max">再O(n)枚举 F[i] + G[i + 1] 的max</h6>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+#define fu(i, l, r) for(int i = l; i &lt;= r; i++)
+#define fd(i, l, r) for(int i = l; i &gt;= r; i--)
+#define ll long long
+#define N 2000005
+#define M 1000005
+inline int read()
+{
+    int f = 1, a = 0;
+    char c = getchar();
+    while(c &gt; '9' || c &lt; '0'){ if(c == '-')f = -f; c = getchar(); }
+    while(c &lt;= '9' &amp;&amp; c &gt;= '0'){ a = a * 10 + c - '0'; c = getchar(); }
+    return a * f;
+}
+int n, l;
+int a[N];
+int sum[N], h[N], h2[N], f[N], d[N];
+int q[N], b = 1, r = 0;
+int ans = -314324124;
+int main()
+{
+    n = read(); l = read();
+    fu(i, 1, n) a[i] = read();
+    fu(i, 1, n) sum[i] = sum[i - 1] + a[i];
+    fu(i, 1, n) 
+    {
+        while(b &lt;= r &amp;&amp; i - q[b] &gt; l) b++; 
+        while(b &lt;= r &amp;&amp; sum[i - 1] &lt;= sum[q[r]]) r--;
+        q[++r] = i - 1;
+        h[i] = sum[i] - sum[q[b]];
+        f[i] = max(f[i - 1], h[i]);
+    }
+    b = 1, r = 0;
+    fd(i, n, 1)
+    {
+        while(b &lt;= r &amp;&amp; q[b] - i + 1 &gt; l) b++;
+        while(b &lt;= r &amp;&amp; sum[i] &gt;= sum[q[r]]) r--;
+        q[++r] = i;
+        h2[i] = sum[q[b]] - sum[i - 1];
+        d[i] = max(d[i + 1], h2[i]);
+    }
+    fu(i, 1, n - 1) ans = max(ans, f[i] + d[i + 1]);
+    printf(&quot;%d&quot;, ans);
+    return 0;
+}
+</code></pre>
+<hr>
+<h2 id="t4-圣诞岛的旅行">T4 圣诞岛的旅行</h2>
+<h6 id="时间限制-1s">时间限制   1s</h6>
+<h3 id="问题背景">【问题背景】</h3>
+<h5 id="angel喜欢无目的的乱逛当然他不会轻易地回头-angel想去广场那么他什么时候才能到呢">Angel喜欢无目的的乱逛，当然，他不会轻易地回头。Angel想去广场，那么，他什么时候才能到呢？</h5>
+<h3 id="问题描述-3">【问题描述】</h3>
+<h5 id="angel已经买了一份圣诞岛的地图地图上有nn-100个交叉路口交叉路口之间有马路相连接不超过1000条马路">Angel已经买了一份圣诞岛的地图，地图上有N(N &lt;= 100)个交叉路口，交叉路口之间有马路相连接(不超过1000条马路)。</h5>
+<h5 id="因为圣诞岛的人遵循奇怪的规则道路都是单向的不同的道路之间有一定的距离我们假设angel所在的地点为点1广场所在点为n">因为圣诞岛的人遵循奇怪的规则，道路都是单向的，不同的道路之间有一定的距离，我们假设Angel所在的地点为点1，广场所在点为N。</h5>
+<h5 id="假设angel走一单位距离需要一单位时间">假设Angel走一单位距离需要一单位时间。</h5>
+<h5 id="问angel最早和最迟什么时候到达广场">问Angel最早和最迟什么时候到达广场？</h5>
+<h3 id="输入格式-2">【输入格式】</h3>
+<h5 id="第一行为n-mn是路口的数量m是马路的数量">第一行为N, M，N是路口的数量，M是马路的数量。</h5>
+<h5 id="后m行每行3个整数x-y-weight代表一条从x路口到y路口长度为weight的马路">后M行，每行3个整数X, Y, Weight，代表一条从X路口到Y路口，长度为Weight的马路。</h5>
+<h3 id="输出格式-2">【输出格式】</h3>
+<h5 id="对于每组数据第一行请输出最少时间第二行请输出最迟时间要是可怜的angel永远到不了广场那就只要输出never">对于每组数据，第一行请输出最少时间，第二行请输出最迟时间，要是可怜的Angel永远到不了广场，那就只要输出“Never”。</h5>
+<h3 id="样例数据">【样例数据】</h3>
+<h5 id="input">Input</h5>
+<h5 id="5-5">5 5</h5>
+<h5 id="1-2-1">1 2 1</h5>
+<h5 id="1-4-10">1 4 10</h5>
+<h5 id="2-3-1">2 3 1</h5>
+<h5 id="3-4-1">3 4 1</h5>
+<h5 id="4-5-1">4 5 1</h5>
+<h5 id="output">Output</h5>
+<h5 id="4-2">4</h5>
+<h5 id="11">11</h5>
+<hr>
+<h6 id="简单的图论最长路-最短路">简单的图论（最长路 + 最短路）</h6>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+inline int read()
+{
+    int f = 1, a = 0;
+    char c = getchar();
+    while(c &gt; '9' || c &lt; '0'){if(c == '-') f = -f;c = getchar();}
+    while(c &lt;= '9' &amp;&amp; c &gt;= '0'){a = a * 10 + c - '0';c = getchar();}
+    return a * f; 
+}
+int n, m;
+int head[105], nxt[1005], v[1005], w[1005], cnt;
+void add(int x, int y, int z)
+{
+    nxt[++cnt] = head[x];
+    head[x] = cnt;
+    v[cnt] = y;
+    w[cnt] = z;
+}
+int q[1000005], inq[105], f = 1, e = 0, dis[1005];
+int main()
+{
+//  freopen(&quot;travel.in&quot;, &quot;r&quot;, stdin);
+//  freopen(&quot;travel.out&quot;, &quot;w&quot;, stdout);
+    n = read();m = read();
+    for (int i = 1; i &lt;= m; i++) { int x = read(), y = read(), z = read(); add(x, y, z);}
+    memset(dis, 20, sizeof(dis));
+    dis[1] = 0, inq[1] = 1, q[++e] = 1;
+    while(f &lt;= e)
+    {
+        int _u = q[f++];
+        for (int i = head[_u]; i != 0; i = nxt[i])
+        {
+            int _v = v[i];
+            if(dis[_v] &gt; dis[_u] + w[i])
+            {
+                dis[_v] = dis[_u] + w[i];
+                if(inq[_v] == 0)
+                {
+                    inq[_v] = 1;
+                    q[++e] = _v;
+                }
+            }
+        }
+        inq[_u] = 0;
+    }
+    if(dis[n] == 336860180)
+    {
+        cout &lt;&lt; &quot;Never&quot;;
+        return 0;
+    }
+    cout &lt;&lt; dis[n] &lt;&lt; endl;
+    memset(dis, 20, sizeof(dis));
+    dis[1] = 0, inq[1] = 1, e = 0, f = 1, q[++e] = 1;
+    while(f &lt;= e)
+    {
+        int _u = q[f++];
+        for (int i = head[_u]; i != 0; i = nxt[i])
+        {
+            int _v = v[i];
+            if(dis[_v] &gt; dis[_u] - w[i])
+            {
+                dis[_v] = dis[_u] - w[i];
+                if(inq[_v] == 0)
+                {
+                    inq[_v] = 1;
+                    q[++e] = _v;
+                }
+            }
+        }
+        inq[_u] = 0;
+    }
+    cout &lt;&lt; -dis[n];
+    return 0;
+}
+</code></pre>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[190809noip模拟赛]]></title>
@@ -51,6 +548,294 @@
         <link href="https://gzhffIThh.github.io/post/190809noip-mo-ni-sai/">
         </link>
         <updated>2020-02-23T13:27:54.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="很正常的一场模拟-score300">很正常的一场模拟 score:300</h2>
+<h2 id="t1-素数">T1  素数</h2>
+<h4 id="问题描述">【问题描述】</h4>
+<p>给定一个正整数N，询问1到N中有多少个素数。<br>
+####【输入格式】primenum.in<br>
+一个正整数N。</p>
+<h4 id="输出格式primenumout">【输出格式】primenum.out</h4>
+<p>一个数Ans，表示1到N中有多少个素数。</p>
+<h4 id="输入样例">【输入样例】</h4>
+<p>10</p>
+<h4 id="输出样例">【输出样例】</h4>
+<p>4</p>
+<h3 id="数据规模">【数据规模】</h3>
+<p>30%   N&lt;=100<br>
+70%   N&lt;=5000<br>
+100%  N&lt;=10000000</p>
+<p>签到题？<br>
+用欧拉筛O(n)搞定</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+inline int read()
+{
+    int f = 1, a = 0;char c = getchar();
+    while(c &gt; '9' || c &lt; '0'){ if(c == '-') f = -f; c = getchar(); }
+    while(c &lt;= '9' &amp;&amp; c &gt;= '0'){ a = a * 10 + c - '0'; c = getchar(); }
+    return a * f; 
+}
+int n, len = 0;
+const int maxn = 1e8 + 5;
+int p[maxn];
+bool used[maxn];
+int main()
+{
+//	freopen(&quot;primenum.in&quot;, &quot;r&quot;, stdin);
+//	freopen(&quot;primenum.out&quot;, &quot;w&quot;, stdout);
+	n = read();
+	for (int i = 2; i &lt;= n; i++)
+	{
+		if(!used[i]) p[++len] = i;
+		for (int j = 1; j &lt;= len &amp;&amp; i * p[j] &lt;= n; j++)
+		{
+			used[i * p[j]] = 1;
+			if(i % p[j] == 0) break;
+		}
+	}
+	printf(&quot;%d&quot;, len);
+	return 0;
+}
+</code></pre>
+<hr>
+<h2 id="t2-传玫瑰">T2 传玫瑰</h2>
+<h4 id="题目描述">【题目描述】</h4>
+<p>情人节到了，情侣们也活跃起来了。这不，GoldenSun和Yoyo_Yao分到了同一个班上（真有缘）。这天，GoldenSun专门跑到了花店，为Yoyo_Yao选了999支玫瑰花（-_-|||），可当GoldenSun说了一大堆肉麻的话，正准备把花送给Yoyo_Yao时，班主任DuBowen进来了，无奈的GoldenSun只得从自己的位子上把花传给Yoyo_Yao。如果一整束传，不但比较抢眼，说不定还会被中途的一些八卦的人抢走，所以GoldenSun只能一支一支的传。<br>
+已知GoldenSun他们班的座位是一个矩形，GoldenSun的位子在(x,m)，Yoyo_Yao的位子在(y,n)，传玫瑰时，只能纵横传而不能斜传（更不能扔）。又知GoldenSun班上的同学很八卦，每经过一个同学传时，玫瑰花就会扣去一定的成长值（玫瑰先开始有个成长值），即那个同学的八卦度，当玫瑰的成长值不大于0时，玫瑰就会凋零。GoldenSun希望自己的心血不要白费，即所有的玫瑰花都能传到Yoyo_Yao手中，所以如果有这种情况，GoldenSun就会自己冒着风险送这朵玫瑰。<br>
+请你帮GoldenSun找到一条令玫瑰成长值为最高的路线，让GoldenSun能向Yoyo_Yao在情人节之际表达自己的爱意。</p>
+<h4 id="输入格式">【输入格式】</h4>
+<p>输入第一行有2个用空格隔开的整数a和b，表示班里有a行b列（1&lt;=a,b&lt;=90）。<br>
+第二行有四个用空格隔开的整数x,m,y,n，(x,m)为GoldenSun的座位，(y,n)为Yoyo_Yao的座位。（1&lt;=x,y&lt;=a;1&lt;=m,n&lt;=b）<br>
+第三行有一个整数love为单支玫瑰的最初成长值。(0&lt;love&lt;=maxlongint)<br>
+来的a行是一个a*b的矩阵，矩阵中第i行j列的正整数表示坐在第i行j列的学生的八卦程度，每行的b个整数之间用空格隔开。（当然他们两个人的八卦程度为0）<br>
+八卦程度(0&lt;=bg&lt;=love)</p>
+<h4 id="输出格式">【输出格式】</h4>
+<p>输出共一行，包含一个整数，表示单支玫瑰最后成长值的最大值。<br>
+如果是GoldenSun自己送，则输出love，即单支玫瑰的最初成长值。</p>
+<h4 id="输入样例-2">【输入样例】</h4>
+<p>2 2<br>
+1 1 2 2<br>
+3<br>
+0 1<br>
+1 0</p>
+<h4 id="输出样例-2">【输出样例】</h4>
+<p>2</p>
+<p>看起来像传纸条<br>
+然而正解是最短路？？？</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+#define ll long long
+inline ll read()
+{
+    int f = 1, a = 0;char c = getchar();
+    while(c &gt; '9' || c &lt; '0'){ if(c == '-') f = -f; c = getchar(); }
+    while(c &lt;= '9' &amp;&amp; c &gt;= '0'){ a = a * 10 + c - '0'; c = getchar(); }
+    return a * f; 
+}
+ll n, m;
+ll sx, sy, tx, ty, lo;
+ll g[105][105];
+ll dis[105][105], f = 1, e = 0;
+bool inq[105][105];
+struct point
+{
+	int x, y;
+} q[400005];
+ll det[4][2] = { {0, 1}, {1, 0}, {-1, 0}, {0, -1} };
+int main()
+{
+	//freopen(&quot;sendrose.in&quot;, &quot;r&quot;, stdin);
+	//freopen(&quot;sendrose.out&quot;, &quot;w&quot;, stdout);
+	n = read();m = read();
+	sx = read();sy = read();tx = read();ty = read();lo = read();
+	for (int i = 1; i &lt;= n; i++)
+		for (int j = 1; j &lt;= m; j++)
+			g[i][j] = read();
+	memset(dis, 20, sizeof(dis));
+	dis[sx][sy] = 0, inq[sx][sy] = 1, q[++e].x = sx, q[e].y = sy;
+	while(f &lt;= e)
+	{
+		point u = q[f++];
+		for (int i = 0; i &lt; 4; i++)
+		{
+			point v = u;
+			v.x += det[i][0];
+			v.y += det[i][1];
+			if(v.x &lt; 1 || v.x &gt; n || v.y &lt; 1 || v.y &gt; m) continue;
+			if(dis[v.x][v.y] &gt; dis[u.x][u.y] + g[v.x][v.y])
+			{
+				dis[v.x][v.y] = dis[u.x][u.y] + g[v.x][v.y];
+				if(inq[v.x][v.y] == 0)
+				{
+					inq[v.x][v.y] = 1;
+					q[++e].x = v.x;
+					q[e].y = v.y;
+				}
+			}
+		}
+		inq[u.x][u.y] = 0;
+	}
+	printf(&quot;%lld&quot;, lo - dis[tx][ty] &lt; 0 ? lo : lo - dis[tx][ty]);
+	return 0;
+}
+</code></pre>
+<hr>
+<h2 id="t3-一起去打cs">T3 一起去打cs</h2>
+<h4 id="问题描述-2">【问题描述】</h4>
+<p>早就和lyk约好了去打cs，一直没找着时间，终于今天我家没人，他家也没人，总算可以出去了。但是偏偏天公不作美，某某人非要留那么多题要做。没办法只能尽快做完然后抓紧时间吧……</p>
+<h5 id="为了尽量节省时间我俩决定分开做所有题吧嘿嘿稍微耍一下滑~~-但是有的题我比较擅长而有的题lyk要比我做的快-所以为了尽快做完所有的题我们要好好的分配一下-现在给出你要做题-的数目和我俩分别做每个题所需要的时间-希望你帮忙计算一下我们最少需要多长时间才能做完所有的题去打cs啊">为了尽量节省时间，我俩决定分开做所有题吧（嘿嘿，稍微耍一下滑~~）。但是有的题我比较擅长，而有的题lyk要比我做的快。所以为了尽快做完所有的题，我们要好好的分配一下。现在给出你要做题 的数目和我俩分别做每个题所需要的时间。希望你帮忙计算一下，我们最少需要多长时间才能做完所有的题去打cs啊！！！</h5>
+<h4 id="输入格式csin">【输入格式】cs.in</h4>
+<p>第一行一个正整数n，表示有n个题要做。<br>
+接下来有n行，每行两个正整数ai，bi。 分别表示我和lyk做每个题所用的时间。</p>
+<h4 id="输出格式csout">【输出格式】cs.out</h4>
+<p>一个数，最少需要多长时间才能去打CS。</p>
+<h4 id="输入样例-3">【输入样例】</h4>
+<p>3<br>
+5 10<br>
+6 11<br>
+7 12</p>
+<h4 id="输出样例-3">【输出样例】</h4>
+<p>12</p>
+<h4 id="输入输出样例解释">【输入输出样例解释】</h4>
+<p>我完成题目1和题目2，时间为11。lyk完成题目3，时间为12。<br>
+或者 我完成题目1和题目3，时间为12。lyk完成题目2，时间为11。</p>
+<h4 id="数据规模-2">【数据规模】</h4>
+<p>30%的数据满足：1 &lt;= n &lt;= 20<br>
+100%的数据满足：1 &lt;= n &lt;= 200 , 1 &lt;= ai,bi &lt;=200</p>
+<p>非常简单的动态规划。<br>
+题目类型：独立任务最优调度问题<br>
+状态设计：f[i,j]表示前i个任务，第一个人用了j时间，第二个人所用最小时间<br>
+转移方程：f[i,j]=min{f[i-1,j-a[i]],f[i-1,j]+b[i]}</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int n, a[201], b[201];
+int f[201][40001];
+int ans = 10000000;
+int sum = 0;
+int main()
+{
+//	freopen(&quot;cs.in&quot;, &quot;r&quot;, stdin);
+//	freopen(&quot;cs.out&quot;, &quot;w&quot;, stdout);
+	scanf(&quot;%d&quot;, &amp;n);
+	for (int i = 1; i &lt;= n; i++) 
+		scanf(&quot;%d%d&quot;, &amp;a[i], &amp;b[i]), sum += a[i];
+	memset(f, 11, sizeof(f));
+	memset(f[0], 0, sizeof(f[0]));
+	for (int i = 0; i &lt; n; i++)
+		for (int j = sum - a[i + 1]; j &gt;= 0; j--)
+		{
+			f[i + 1][j + a[i + 1]] = min(f[i + 1][j + a[i + 1]], f[i][j]);
+			f[i + 1][j] = min(f[i + 1][j], f[i][j] + b[i + 1]);				
+		}
+	for (int j = 0; j &lt;= sum; j++)
+		ans = min(max(f[n][j], j), ans);
+	printf(&quot;%d&quot;, ans);
+	return 0;
+}
+</code></pre>
+<hr>
+<h2 id="t4-战争">T4  战争</h2>
+<p>####【问题描述】<br>
+在2240年，一场巨大的战争在地球联合力量（EAF）与火星联盟(MF)之间展开。至今，双方势均力敌。因最近的一次经济危机，资源紧缺，EAF将被MF勒要更多领土。为此，EAF决定采取战争以来最重要的行动：发动对分散在MF上各处的基地进行同时攻击。EAF的力量大都是mechs——大型两足跛行车，有飞行功能。<br>
+典型的MF基地概况如下：构成基地的房屋地跨一到两块领土。每块领土被保护塔产生的穿不透的能量层所笼罩，以免于外来袭击。这些保护塔围绕在领土周围起保护作用。<br>
+每座保护塔通过建造在地面上的水道与至少一座塔相联系。当那些相联系的塔围成一圈，它们产生能量层。否则能量层消失。<br>
+MF知道如果能量层消失，基地将很容易被EAF的力量侵占，因此，被水道相连的两座塔保护水道免受军事袭击。每座塔有防御功能，能拆卸指定数量的mechs，每个水道在坍塌之前能解决特定数量敌方mechs的袭击。这个数量由水道连接的两塔能拆卸的总数量决定。两座塔不能被一个以上的水道相连。<br>
+<img src="http://www.h2zbmh.com:8080/html/JudgeOnline/upload/image/20190815/20190815114140_93581.png" alt="" loading="lazy"><br>
+但是，袭击塔一边的水道不减少塔在另一边能拆卸的mechs的数量。因为这次行动是突袭，所有的对水道的袭击都必须同时，所有水道同时坍塌瓦解。</p>
+<p>所有能量层必须废除才算毁灭了一个MF基地。破坏所有水道能达此目的，但也将需要很多mechs 牺牲。EAF只有很少的力量花费了，必须最有效率地部署mechs。<br>
+你被赋予这任务，写程序：使EAF胜利。给定一幅保护塔的曲线图，决定哪些水道要被破坏，来使所有能量层消失，要求战斗中牺牲最少的mechs。</p>
+<h4 id="输入格式-2">【输入格式】</h4>
+<p>第一行为一个整数m，2 &lt; m &lt;= 100，代表塔的数量。<br>
+以下2m行，对于每个塔都有两行输入：<br>
+◎一行包含三个正整数i(0 &lt;= i &lt;= m-1)，ui(1 &lt;= ui &lt;= 50)，ci(1 &lt;= ci &lt;= m-1)：每个塔的身份标识、可以摧毁的mechs的数量和与它相连的河道的数量。两个整数间用一个空格隔开。<br>
+◎一行包含ci个不同的正整数，代表和塔i连接的塔。一个塔不能连接到它自己，两个整数间用一个空格隔开。<br>
+该防御体系至少能够生成一个能量层。 不一定所有的塔连通。</p>
+<h4 id="输出格式-2">【输出格式】</h4>
+<p>一行一个整数，代表EAF摧毁所有能量层所需要消耗的最少数量的mechs。</p>
+<h4 id="输入样例-4">【输入样例】</h4>
+<p>3<br>
+0 1 2<br>
+1 2<br>
+1 2 2<br>
+0 2<br>
+2 3 2<br>
+0 1</p>
+<h4 id="输出样例-4">【输出样例】</h4>
+<p>3</p>
+<p>总结题意，就是花最少的费用把一个有环的图拆成一个无环的图，无环的图<br>
+是什么，很显然是树，要花最少的费用把图拆成树即保留权值最大的树，推<br>
+到这里我想大家应该知道这题的算法了，就是最大生成树<br>
+这里用的是prim</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+inline int read()
+{
+    int f = 1, a = 0;char c = getchar();
+    while(c &gt; '9' || c &lt; '0'){ if(c == '-') f = -f; c = getchar(); }
+    while(c &lt;= '9' &amp;&amp; c &gt;= '0'){ a = a * 10 + c - '0'; c = getchar(); }
+    return a * f; 
+}
+int n, a[105], to[105][105];
+struct edge
+{
+	int u, v, w;
+} e[20005];
+int tmp[105];
+int cnt = 0;
+bool used[105][105];
+bool cmp(edge a, edge b)
+{
+	return a.w &gt; b.w;
+}
+int fa[105];
+int find(int x) 
+{
+	if(fa[x] != x) fa[x] = find(fa[x]);
+	return fa[x];
+}
+int ans, sum;
+int x;
+int main()
+{
+//	freopen(&quot;warfare.in&quot;, &quot;r&quot;, stdin);
+//	freopen(&quot;warfare.out&quot;, &quot;w&quot;, stdout);
+	n = read();	
+	for (int i = 1; i &lt;= n; i++)
+	{
+		x = read();
+		a[x] = read();
+		tmp[x] = read();
+		for (int j = 1; j &lt;= tmp[x]; j++)
+			to[x][j] = read();
+	}
+	for (int i = 0; i &lt; n; i++)
+		for (int j = 1; j &lt;= tmp[i]; j++)
+			if(used[i][to[i][j]] == 0)
+			{
+				e[++cnt].u = i;
+				e[cnt].v = to[i][j];
+				e[cnt].w = a[i] + a[to[i][j]];
+				sum += e[cnt].w;
+				used[i][to[i][j]] = 1;
+				used[to[i][j]][i] = 1;
+			}
+	sort(e + 1, e + cnt + 1, cmp);
+	for (int i = 1; i &lt;= n; i++) fa[i] = i;
+	for (int i = 1; i &lt;= cnt; i++)
+	{
+		if(find(e[i].u) == find(e[i].v)) continue;
+		else
+		{
+			int uu = find(e[i].u);int vv = find(e[i].v);
+			ans += e[i].w;
+			fa[uu] = vv;
+		}
+	}
+	printf(&quot;%d&quot;, sum - ans);
+	return 0;
+}
+</code></pre>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[历年noip普及组考点分析]]></title>
@@ -58,6 +843,91 @@
         <link href="https://gzhffIThh.github.io/post/li-nian-noip-pu-ji-zu-kao-dian-fen-xi/">
         </link>
         <updated>2020-02-23T13:27:24.000Z</updated>
+        <content type="html"><![CDATA[<hr>
+<p>2019 csp前夕</p>
+<hr>
+<h2 id="2018">2018</h2>
+<h3 id="1-标题统计">1.  标题统计</h3>
+<p>简单的字符串题， 读入统计即可</p>
+<h3 id="2-龙虎斗">2.  龙虎斗</h3>
+<p>简单的模拟题， 要开longlong</p>
+<h3 id="3-摆渡车">3. 摆渡车</h3>
+<p>dp， 要各种优化（范围）</p>
+<h3 id="4-对称二叉树">4. 对称二叉树</h3>
+<p>爆搜即可， 对称让指针一左一右跳去判定</p>
+<h2 id="2017">2017</h2>
+<h3 id="1-成绩">1.  成绩</h3>
+<p>简单题</p>
+<h3 id="2-图书管理员">2.  图书管理员</h3>
+<p>简单模拟， 排序</p>
+<h3 id="3-棋盘">3. 棋盘</h3>
+<p>bfs， 判断不同颜色通过的金币变化</p>
+<h3 id="4-跳房子">4. 跳房子</h3>
+<p>二分 + 单调队列优化的dp判定</p>
+<h2 id="2016">2016</h2>
+<h3 id="1-买铅笔">1.  买铅笔</h3>
+<p>简单计算</p>
+<h3 id="2-回文日期">2.  回文日期</h3>
+<p>枚举 + 判定</p>
+<h3 id="3-海港">3. 海港</h3>
+<p>队列（按人头储存）</p>
+<h3 id="4-魔法阵">4.  魔法阵</h3>
+<p>数学计算题</p>
+<h2 id="2015">2015</h2>
+<h3 id="1-金币">1. 金币</h3>
+<p>简单数学题</p>
+<h3 id="2-扫雷游戏">2.  扫雷游戏</h3>
+<p>简单模拟</p>
+<h3 id="3-求和">3. 求和</h3>
+<p>数学计算题</p>
+<h3 id="4-推销员">4. 推销员</h3>
+<p>greedy + priority_queue</p>
+<h2 id="2014">2014</h2>
+<h3 id="1-比例简化">1.  比例简化</h3>
+<p>模拟 + gcd</p>
+<h3 id="2-珠心算测验">2.  珠心算测验</h3>
+<p>简单模拟</p>
+<h3 id="3-螺旋矩阵">3. 螺旋矩阵</h3>
+<p>模拟</p>
+<h3 id="4-子矩阵">4. 子矩阵</h3>
+<p>预处理 + dp(矩阵2维dp）</p>
+<h2 id="2013">2013</h2>
+<h3 id="1-计数问题">1.  计数问题</h3>
+<p>简单统计</p>
+<h3 id="2-表达式求值">2.  表达式求值</h3>
+<p>中缀 -&gt; 后缀 -&gt; 求值（用stack）</p>
+<h3 id="3-小朋友的数字">3. 小朋友的数字</h3>
+<p>简单dp</p>
+<h3 id="4-车站分级">4.  车站分级</h3>
+<p>建图 + 拓扑序</p>
+<h2 id="2012">2012</h2>
+<h3 id="1-质因数分解">1.  质因数分解</h3>
+<p>筛素数</p>
+<h3 id="2-寻宝">2.  寻宝</h3>
+<p>模拟 + 统计</p>
+<h3 id="3-摆花">3. 摆花</h3>
+<p>简单2维dp</p>
+<h3 id="4-文化之旅">4. 文化之旅</h3>
+<p>bfs</p>
+<h2 id="2011">2011</h2>
+<h3 id="1-数字反转">1.  数字反转</h3>
+<p>简单模拟</p>
+<h3 id="2-统计单词数">2.  统计单词数</h3>
+<p>字符串统计</p>
+<h3 id="3-瑞士轮">3. 瑞士轮</h3>
+<p>sort</p>
+<h3 id="4-表达式的值">4. 表达式的值</h3>
+<p>中缀 -&gt; 后缀 + 简单dp</p>
+<h2 id="2010">2010</h2>
+<h3 id="1-数字统计">1. 数字统计</h3>
+<p>简单模拟</p>
+<h3 id="2-接水问题">2.  接水问题</h3>
+<p>greedy</p>
+<h3 id="3-导弹拦截">3. 导弹拦截</h3>
+<p>sort + 判断</p>
+<h3 id="4-三国游戏">4. 三国游戏</h3>
+<p>简单的博弈论</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[莫队（优美的暴力）]]></title>
@@ -65,6 +935,26 @@
         <link href="https://gzhffIThh.github.io/post/mo-dui-you-mei-de-bao-li/">
         </link>
         <updated>2020-02-23T13:26:46.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>
+<p>解决区间统计问题 如<a href="https://www.luogu.com.cn/problem/P3901">这题</a></p>
+</li>
+<li>
+<p>分块 + 排序 + 统计</p>
+</li>
+<li>
+<p>复杂度： $ O(nm^2) $</p>
+</li>
+<li>
+<p>思想：通过分块和排序后，减少相邻区间的移动操作次数，并在区间移动过程中进行区间中统计</p>
+</li>
+</ul>
+<h2 id="例题">例题 ：</h2>
+<p><a href="https://www.luogu.com.cn/problem/P3901">P3901</a></p>
+<p><a href="https://www.luogu.com.cn/problem/SP3267">SP3267</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P1494">[国家集训队]小Z的袜子 /【模板】莫队</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P1903">[国家集训队]数颜色 / 维护队列 /【模板】带修莫队</a></p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[About me...]]></title>
@@ -72,6 +962,29 @@
         <link href="https://gzhffIThh.github.io/post/about-me/">
         </link>
         <updated>2020-02-23T13:23:33.000Z</updated>
+        <content type="html"><![CDATA[<p>这是一位来自浙江的oier。。</p>
+<h3 id="近期算法学习">近期算法学习：</h3>
+<ul>
+<li>最短路</li>
+<li>最小生成树</li>
+</ul>
+<h3 id="内容">内容：</h3>
+<p>好题的题解（题面，题意，分析思路，部分分算法，正解，code）</p>
+<p>算法笔记（解决的问题，优化思想成型的过程，常见模型，写法注意，经典题，总结）</p>
+<p>分类（字符串，图论，数据结构，动态规划，数学，搜索，常用技巧）</p>
+<p>记录比赛和练习</p>
+<h3 id="学习计划">学习计划</h3>
+<ul>
+<li>学习蓝书上图论部分</li>
+</ul>
+<h3 id="参赛">参赛</h3>
+<ul>
+<li>2018noip pj初赛73</li>
+<li>2019csp-j/s 初赛94/78.5</li>
+<li>2019csp-j/s 复赛265/126</li>
+</ul>
+<h3 id="我的代码仓库-this">我的代码仓库 <a href="https://gzhffithh.blog.luogu.org/">this</a></h3>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[树的应用]]></title>
@@ -79,5 +992,39 @@
         <link href="https://gzhffIThh.github.io/post/shu-de-ying-yong/">
         </link>
         <updated>2020-02-23T12:57:02.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="重心">重心：</h3>
+<ul>
+<li>定义</li>
+</ul>
+<p>在一棵树中，删去一个点后，树分成的子树中最大的子树最小的一个点</p>
+<ul>
+<li>性质：</li>
+</ul>
+<ol>
+<li>无边权的树中，其他所有点到重心的距离和最小</li>
+<li>用一条边连接两棵树，新的重心在原来两个重心的路径上</li>
+<li>一棵树删一个点，重心最多只会移动一个位置</li>
+<li>一棵树最多有两个重心且相邻</li>
+</ol>
+<ul>
+<li>例题：</li>
+</ul>
+<p><a href="http://poj.org/problem?id=1655">POJ1655</a></p>
+<p><a href="http://poj.org/problem?id=3107">POJ3107</a></p>
+<h3 id="树的直径">树的直径：</h3>
+<ul>
+<li>定义</li>
+</ul>
+<p>一棵树中最长的一条链</p>
+<ul>
+<li>例题</li>
+</ul>
+<p><a href="https://www.luogu.com.cn/problem/SP1437">模板</a><br>
+<a href="https://gzhffithh.blog.luogu.org/shu-di-zhi-jing">code</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P4408">[NOI2003]逃学的小孩</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P3761">[TJOI2017]城市</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P3629">[APIO2010]巡逻</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P2491">[SDOI2011]消防</a></p>
+]]></content>
     </entry>
 </feed>
