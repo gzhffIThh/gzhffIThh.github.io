@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://gzhffIThh.github.io</id>
     <title>gzhffIThh&apos;s blog</title>
-    <updated>2020-02-26T01:46:29.949Z</updated>
+    <updated>2020-02-26T02:25:10.671Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://gzhffIThh.github.io"/>
     <link rel="self" href="https://gzhffIThh.github.io/atom.xml"/>
@@ -10,6 +10,17 @@
     <logo>https://gzhffIThh.github.io/images/avatar.png</logo>
     <icon>https://gzhffIThh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, gzhffIThh&apos;s blog</rights>
+    <entry>
+        <title type="html"><![CDATA[友链]]></title>
+        <id>https://gzhffIThh.github.io/post/you-lian/</id>
+        <link href="https://gzhffIThh.github.io/post/you-lian/">
+        </link>
+        <updated>2020-02-26T02:22:03.000Z</updated>
+        <content type="html"><![CDATA[<p>。。。<br>
+空空如也<br>
+<a href="https://gzhffithh.github.io/">me</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[中考复习计划]]></title>
         <id>https://gzhffIThh.github.io/post/zhong-kao-fu-xi-ji-hua/</id>
@@ -984,47 +995,6 @@ int main()
 <li>2019csp-j/s 复赛265/126</li>
 </ul>
 <h3 id="我的代码仓库-this">我的代码仓库 <a href="https://gzhffithh.blog.luogu.org/">this</a></h3>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[树的应用]]></title>
-        <id>https://gzhffIThh.github.io/post/shu-de-ying-yong/</id>
-        <link href="https://gzhffIThh.github.io/post/shu-de-ying-yong/">
-        </link>
-        <updated>2020-02-23T12:57:02.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="重心">重心：</h3>
-<ul>
-<li>定义</li>
-</ul>
-<p>在一棵树中，删去一个点后，树分成的子树中最大的子树最小的一个点</p>
-<ul>
-<li>性质：</li>
-</ul>
-<ol>
-<li>无边权的树中，其他所有点到重心的距离和最小</li>
-<li>用一条边连接两棵树，新的重心在原来两个重心的路径上</li>
-<li>一棵树删一个点，重心最多只会移动一个位置</li>
-<li>一棵树最多有两个重心且相邻</li>
-</ol>
-<ul>
-<li>例题：</li>
-</ul>
-<p><a href="http://poj.org/problem?id=1655">POJ1655</a></p>
-<p><a href="http://poj.org/problem?id=3107">POJ3107</a></p>
-<h3 id="树的直径">树的直径：</h3>
-<ul>
-<li>定义</li>
-</ul>
-<p>一棵树中最长的一条链</p>
-<ul>
-<li>例题</li>
-</ul>
-<p><a href="https://www.luogu.com.cn/problem/SP1437">模板</a><br>
-<a href="https://gzhffithh.blog.luogu.org/shu-di-zhi-jing">code</a></p>
-<p><a href="https://www.luogu.com.cn/problem/P4408">[NOI2003]逃学的小孩</a></p>
-<p><a href="https://www.luogu.com.cn/problem/P3761">[TJOI2017]城市</a></p>
-<p><a href="https://www.luogu.com.cn/problem/P3629">[APIO2010]巡逻</a></p>
-<p><a href="https://www.luogu.com.cn/problem/P2491">[SDOI2011]消防</a></p>
 ]]></content>
     </entry>
 </feed>
