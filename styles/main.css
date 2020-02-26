@@ -1899,13 +1899,13 @@ body {
         margin: 0 auto;
       }
     body {
-      color: #4263eb;
+      color: #212529;
     }
     .next-md-body {
-      color: #4263eb;
+      color: #212529;
     }
     .next-md-body h1, .next-md-body h2 {
-      border-bottom-color: #4263eb;
+      border-bottom-color: #212529;
     }
     .archive-timeline-box::after, .tag-timeline-wrapper::after {
       background: #495057;
