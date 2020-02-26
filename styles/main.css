@@ -1961,11 +1961,11 @@ body {
       background: #0b7285;
       color: rgba(0, 0, 0, 0.98);
     }.markdownIt-TOC a {
-      color: #eee;
-      border-bottom-color: #eee;
+      color: #3b5bdb;
+      border-bottom-color: #3b5bdb;
     }.markdownIt-TOC a:hover {
-      color: #fff;
-      border-bottom-color: #fff;
+      color: #0b7285;
+      border-bottom-color: #0b7285;
     }.active-current > a {
       color: #fc6423 !important;
       border-bottom-color: #fc6423 !important;
