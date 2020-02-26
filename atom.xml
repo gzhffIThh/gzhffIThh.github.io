@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://gzhffIThh.github.io</id>
-    <title>gzhffIThh&apos;s blog</title>
-    <updated>2020-02-26T02:32:58.765Z</updated>
+    <title>GzhffIThh&apos;s Blog</title>
+    <updated>2020-02-26T02:37:28.194Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://gzhffIThh.github.io"/>
     <link rel="self" href="https://gzhffIThh.github.io/atom.xml"/>
-    <subtitle>gzhffIThh&apos;s blog</subtitle>
+    <subtitle>逐梦不止</subtitle>
     <logo>https://gzhffIThh.github.io/images/avatar.png</logo>
     <icon>https://gzhffIThh.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, gzhffIThh&apos;s blog</rights>
+    <rights>All rights reserved 2020, GzhffIThh&apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[友链]]></title>
         <id>https://gzhffIThh.github.io/post/you-lian/</id>
